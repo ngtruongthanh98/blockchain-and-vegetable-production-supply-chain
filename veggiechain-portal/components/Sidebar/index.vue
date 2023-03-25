@@ -2,12 +2,12 @@
   <div class="sidebar">
     <div class="sidebar__container">
       <nuxt-link
-        :to="{ name: 'analyze-ecg' }"
+        :to="{ name: 'product-cycle' }"
         class="analyse flex items-center"
         exact-active-class="is-active"
       >
-        <div class="icon-ecg"></div>
-        <span>Analyze ECG</span>
+        <div class="icon-product-cycle"></div>
+        <span>Product cycle</span>
       </nuxt-link>
 
       <nuxt-link
@@ -58,8 +58,8 @@ export default {
     .analyse {
       padding: 16px;
 
-      .icon-ecg {
-        background: url('../../static/ecg-icon.png') no-repeat;
+      .icon-product-cycle {
+        background: url('../../static/smart-contracts.png') no-repeat;
         background-position: 50% 50%;
         background-size: 40px;
 

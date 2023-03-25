@@ -1,6 +1,6 @@
 <template>
   <div class="subheader-wrapper m-4 p-4 text-center">
-    <ecg-viewer />
+    <!-- <ecg-viewer /> -->
   </div>
 </template>
 

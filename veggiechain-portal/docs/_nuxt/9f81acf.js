@@ -2,72 +2,72 @@
 ;(window.webpackJsonp = window.webpackJsonp || []).push([
   [6],
   {
-    0: function(t, e, n) {
+    0: function (t, e, n) {
       'use strict'
-      n.d(e, 'd', function() {
+      n.d(e, 'd', function () {
         return x
       }),
-        n.d(e, 'l', function() {
+        n.d(e, 'l', function () {
           return w
         }),
-        n.d(e, 'n', function() {
+        n.d(e, 'n', function () {
           return _
         }),
-        n.d(e, 'm', function() {
+        n.d(e, 'm', function () {
           return $
         }),
-        n.d(e, 'f', function() {
+        n.d(e, 'f', function () {
           return O
         }),
-        n.d(e, 'b', function() {
+        n.d(e, 'b', function () {
           return j
         }),
-        n.d(e, 's', function() {
+        n.d(e, 's', function () {
           return C
         }),
-        n.d(e, 'h', function() {
+        n.d(e, 'h', function () {
           return k
         }),
-        n.d(e, 'i', function() {
+        n.d(e, 'i', function () {
           return P
         }),
-        n.d(e, 'e', function() {
+        n.d(e, 'e', function () {
           return S
         }),
-        n.d(e, 'r', function() {
+        n.d(e, 'r', function () {
           return E
         }),
-        n.d(e, 'k', function() {
+        n.d(e, 'k', function () {
           return R
         }),
-        n.d(e, 't', function() {
+        n.d(e, 't', function () {
           return A
         }),
-        n.d(e, 'o', function() {
+        n.d(e, 'o', function () {
           return D
         }),
-        n.d(e, 'q', function() {
+        n.d(e, 'q', function () {
           return L
         }),
-        n.d(e, 'g', function() {
+        n.d(e, 'g', function () {
           return I
         }),
-        n.d(e, 'c', function() {
+        n.d(e, 'c', function () {
           return M
         }),
-        n.d(e, 'j', function() {
+        n.d(e, 'j', function () {
           return U
         }),
-        n.d(e, 'p', function() {
+        n.d(e, 'p', function () {
           return B
         }),
-        n.d(e, 'a', function() {
+        n.d(e, 'a', function () {
           return V
         }),
-        n.d(e, 'v', function() {
+        n.d(e, 'v', function () {
           return G
         }),
-        n.d(e, 'u', function() {
+        n.d(e, 'u', function () {
           return Q
         })
       n(30), n(43), n(59), n(60)
@@ -102,7 +102,7 @@
         if (Object.getOwnPropertySymbols) {
           var n = Object.getOwnPropertySymbols(object)
           t &&
-            (n = n.filter(function(t) {
+            (n = n.filter(function (t) {
               return Object.getOwnPropertyDescriptor(object, t).enumerable
             })),
             e.push.apply(e, n)
@@ -113,7 +113,7 @@
         for (var i = 1; i < arguments.length; i++) {
           var source = null != arguments[i] ? arguments[i] : {}
           i % 2
-            ? d(Object(source), !0).forEach(function(e) {
+            ? d(Object(source), !0).forEach(function (e) {
                 Object(c.a)(t, e, source[e])
               })
             : Object.getOwnPropertyDescriptors
@@ -121,7 +121,7 @@
                 t,
                 Object.getOwnPropertyDescriptors(source)
               )
-            : d(Object(source)).forEach(function(e) {
+            : d(Object(source)).forEach(function (e) {
                 Object.defineProperty(
                   t,
                   e,
@@ -138,7 +138,7 @@
         if (!n) {
           if (
             Array.isArray(t) ||
-            (n = (function(t, e) {
+            (n = (function (t, e) {
               if (!t) return
               if ('string' == typeof t) return y(t, e)
               var n = Object.prototype.toString.call(t).slice(8, -1)
@@ -154,18 +154,18 @@
           ) {
             n && (t = n)
             var i = 0,
-              r = function() {}
+              r = function () {}
             return {
               s: r,
-              n: function() {
+              n: function () {
                 return i >= t.length
                   ? { done: !0 }
                   : { done: !1, value: t[i++] }
               },
-              e: function(t) {
+              e: function (t) {
                 throw t
               },
-              f: r
+              f: r,
             }
           }
           throw new TypeError(
@@ -176,23 +176,23 @@
           c = !0,
           f = !1
         return {
-          s: function() {
+          s: function () {
             n = n.call(t)
           },
-          n: function() {
+          n: function () {
             var t = n.next()
             return (c = t.done), t
           },
-          e: function(t) {
+          e: function (t) {
             ;(f = !0), (o = t)
           },
-          f: function() {
+          f: function () {
             try {
               c || null == n.return || n.return()
             } finally {
               if (f) throw o
             }
-          }
+          },
         }
       }
       function y(t, e) {
@@ -203,7 +203,7 @@
       function x(t) {
         var e =
           arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : ''
-        return function() {
+        return function () {
           var n =
             arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : e
           return void 0 === t[n] && (t[n] = 0), t[n]++
@@ -213,7 +213,7 @@
         l.a.config.errorHandler && l.a.config.errorHandler(t)
       }
       function _(t) {
-        return t.then(function(t) {
+        return t.then(function (t) {
           return t.default || t
         })
       }
@@ -247,11 +247,11 @@
           var n =
             t.options._originDataFn ||
             t.options.data ||
-            function() {
+            function () {
               return {}
             }
           ;(t.options._originDataFn = n),
-            (t.options.data = function() {
+            (t.options.data = function () {
               var data = n.call(this, this)
               return (
                 this.$ssrContext && (e = this.$ssrContext.asyncData[t.cid]),
@@ -284,8 +284,8 @@
               : 'components'
         return Array.prototype.concat.apply(
           [],
-          t.matched.map(function(t, r) {
-            return Object.keys(t[n]).map(function(o) {
+          t.matched.map(function (t, r) {
+            return Object.keys(t[n]).map(function (o) {
               return e && e.push(r), t[n][o]
             })
           })
@@ -298,8 +298,8 @@
       function S(t, e) {
         return Array.prototype.concat.apply(
           [],
-          t.matched.map(function(t, n) {
-            return Object.keys(t.components).reduce(function(r, o) {
+          t.matched.map(function (t, n) {
+            return Object.keys(t.components).reduce(function (r, o) {
               return (
                 t.components[o]
                   ? r.push(e(t.components[o], t.instances[o], t, o, n))
@@ -314,12 +314,12 @@
         return Promise.all(
           S(
             t,
-            (function() {
+            (function () {
               var t = Object(o.a)(
                 regeneratorRuntime.mark(function t(n, r, o, c) {
                   var f, l
                   return regeneratorRuntime.wrap(
-                    function(t) {
+                    function (t) {
                       for (;;)
                         switch ((t.prev = t.next)) {
                           case 0:
@@ -332,23 +332,25 @@
                             ;(n = t.sent), (t.next = 11)
                             break
                           case 7:
-                            throw ((t.prev = 7),
-                            (t.t0 = t.catch(1)),
-                            t.t0 &&
-                              'ChunkLoadError' === t.t0.name &&
-                              'undefined' != typeof window &&
-                              window.sessionStorage &&
-                              ((f = Date.now()),
-                              (!(l = parseInt(
-                                window.sessionStorage.getItem('nuxt-reload')
-                              )) ||
-                                l + 6e4 < f) &&
-                                (window.sessionStorage.setItem(
-                                  'nuxt-reload',
-                                  f
-                                ),
-                                window.location.reload(!0))),
-                            t.t0)
+                            throw (
+                              ((t.prev = 7),
+                              (t.t0 = t.catch(1)),
+                              t.t0 &&
+                                'ChunkLoadError' === t.t0.name &&
+                                'undefined' != typeof window &&
+                                window.sessionStorage &&
+                                ((f = Date.now()),
+                                (!(l = parseInt(
+                                  window.sessionStorage.getItem('nuxt-reload')
+                                )) ||
+                                  l + 6e4 < f) &&
+                                  (window.sessionStorage.setItem(
+                                    'nuxt-reload',
+                                    f
+                                  ),
+                                  window.location.reload(!0))),
+                              t.t0)
+                            )
                           case 11:
                             return (
                               (o.components[c] = n = C(n)),
@@ -368,7 +370,7 @@
                   )
                 })
               )
-              return function(e, n, r, o) {
+              return function (e, n, r, o) {
                 return t.apply(this, arguments)
               }
             })()
@@ -381,7 +383,7 @@
       function T() {
         return (T = Object(o.a)(
           regeneratorRuntime.mark(function t(e) {
-            return regeneratorRuntime.wrap(function(t) {
+            return regeneratorRuntime.wrap(function (t) {
               for (;;)
                 switch ((t.prev = t.next)) {
                   case 0:
@@ -399,12 +401,12 @@
                         m({}, e),
                         {},
                         {
-                          meta: k(e).map(function(t, n) {
+                          meta: k(e).map(function (t, n) {
                             return m(
                               m({}, t.options.meta),
                               (e.matched[n] || {}).meta
                             )
-                          })
+                          }),
                         }
                       )
                     )
@@ -423,7 +425,7 @@
         return (N = Object(o.a)(
           regeneratorRuntime.mark(function t(e, n) {
             var o, c, l, d
-            return regeneratorRuntime.wrap(function(t) {
+            return regeneratorRuntime.wrap(function (t) {
               for (;;)
                 switch ((t.prev = t.next)) {
                   case 0:
@@ -438,10 +440,10 @@
                           payload: n.payload,
                           error: n.error,
                           base: e.router.options.base,
-                          env: {}
+                          env: {},
                         }),
                         n.ssrContext && (e.context.ssrContext = n.ssrContext),
-                        (e.context.redirect = function(t, path, n) {
+                        (e.context.redirect = function (t, path, n) {
                           if (t) {
                             e.context._redirected = !0
                             var o = Object(r.a)(path)
@@ -456,9 +458,11 @@
                                 (path = e.router.resolve(path).route.fullPath),
                               !/(^[.]{1,2}\/)|(^\/(?!\/))/.test(path))
                             )
-                              throw ((path = Object(h.f)(path, n)),
-                              window.location.replace(path),
-                              new Error('ERR_REDIRECT'))
+                              throw (
+                                ((path = Object(h.f)(path, n)),
+                                window.location.replace(path),
+                                new Error('ERR_REDIRECT'))
+                              )
                             e.context.next({ path: path, query: n, status: t })
                           }
                         }),
@@ -490,7 +494,7 @@
       function D(t, e) {
         return !t.length || e._redirected || e._errored
           ? Promise.resolve()
-          : L(t[0], e).then(function() {
+          : L(t[0], e).then(function () {
               return D(t.slice(1), e)
             })
       }
@@ -498,8 +502,8 @@
         var n
         return (n =
           2 === t.length
-            ? new Promise(function(n) {
-                t(e, function(t, data) {
+            ? new Promise(function (n) {
+                t(e, function (t, data) {
                   t && e.error(t), n((data = data || {}))
                 })
               })
@@ -518,11 +522,11 @@
         return Object(h.d)(e)
       }
       function M(t, e) {
-        return (function(t, e) {
+        return (function (t, e) {
           for (var n = new Array(t.length), i = 0; i < t.length; i++)
             'object' === Object(r.a)(t[i]) &&
               (n[i] = new RegExp('^(?:' + t[i].pattern + ')$', J(e)))
-          return function(e, r) {
+          return function (e, r) {
             for (
               var path = '',
                 data = e || {},
@@ -588,7 +592,7 @@
             return path
           }
         })(
-          (function(t, e) {
+          (function (t, e) {
             var n,
               r = [],
               o = 0,
@@ -622,7 +626,11 @@
                   repeat: j,
                   partial: O,
                   asterisk: Boolean($),
-                  pattern: pattern ? H(pattern) : $ ? '.*' : '[^' + X(k) + ']+?'
+                  pattern: pattern
+                    ? H(pattern)
+                    : $
+                    ? '.*'
+                    : '[^' + X(k) + ']+?',
                 })
               }
             }
@@ -657,31 +665,25 @@
               t.statusCode ||
               t.status ||
               (t.response && t.response.status) ||
-              500
+              500,
           }
         )
       }
       ;(window.onNuxtReadyCbs = []),
-        (window.onNuxtReady = function(t) {
+        (window.onNuxtReady = function (t) {
           window.onNuxtReadyCbs.push(t)
         })
       var K = new RegExp(
         [
           '(\\\\.)',
-          '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))'
+          '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))',
         ].join('|'),
         'g'
       )
       function z(t, e) {
         var n = e ? /[?#]/g : /[/?#]/g
-        return encodeURI(t).replace(n, function(t) {
-          return (
-            '%' +
-            t
-              .charCodeAt(0)
-              .toString(16)
-              .toUpperCase()
-          )
+        return encodeURI(t).replace(n, function (t) {
+          return '%' + t.charCodeAt(0).toString(16).toUpperCase()
         })
       }
       function F(t) {
@@ -708,67 +710,67 @@
         } catch (t) {}
       }
     },
-    111: function(t, e, n) {
+    111: function (t, e, n) {
       var content = n(168)
       content.__esModule && (content = content.default),
         'string' == typeof content && (content = [[t.i, content, '']]),
         content.locals && (t.exports = content.locals)
       ;(0, n(19).default)('059a2f5f', content, !0, { sourceMap: !1 })
     },
-    112: function(t, e, n) {
+    112: function (t, e, n) {
       var content = n(170)
       content.__esModule && (content = content.default),
         'string' == typeof content && (content = [[t.i, content, '']]),
         content.locals && (t.exports = content.locals)
       ;(0, n(19).default)('497f82f2', content, !0, { sourceMap: !1 })
     },
-    120: function(t, e, n) {
+    120: function (t, e, n) {
       'use strict'
-      e.a = function(t, e) {
+      e.a = function (t, e) {
         return (
           (e = e || {}),
-          new Promise(function(n, r) {
+          new Promise(function (n, r) {
             var s = new XMLHttpRequest(),
               o = [],
               u = [],
               i = {},
-              a = function() {
+              a = function () {
                 return {
                   ok: 2 == ((s.status / 100) | 0),
                   statusText: s.statusText,
                   status: s.status,
                   url: s.responseURL,
-                  text: function() {
+                  text: function () {
                     return Promise.resolve(s.responseText)
                   },
-                  json: function() {
+                  json: function () {
                     return Promise.resolve(s.responseText).then(JSON.parse)
                   },
-                  blob: function() {
+                  blob: function () {
                     return Promise.resolve(new Blob([s.response]))
                   },
                   clone: a,
                   headers: {
-                    keys: function() {
+                    keys: function () {
                       return o
                     },
-                    entries: function() {
+                    entries: function () {
                       return u
                     },
-                    get: function(t) {
+                    get: function (t) {
                       return i[t.toLowerCase()]
                     },
-                    has: function(t) {
+                    has: function (t) {
                       return t.toLowerCase() in i
-                    }
-                  }
+                    },
+                  },
                 }
               }
             for (var c in (s.open(e.method || 'get', t, !0),
-            (s.onload = function() {
+            (s.onload = function () {
               s
                 .getAllResponseHeaders()
-                .replace(/^(.*?):[^\S\n]*([\s\S]*?)$/gm, function(t, e, n) {
+                .replace(/^(.*?):[^\S\n]*([\s\S]*?)$/gm, function (t, e, n) {
                   o.push((e = e.toLowerCase())),
                     u.push([e, n]),
                     (i[e] = i[e] ? i[e] + ',' + n : n)
@@ -784,7 +786,7 @@
         )
       }
     },
-    123: function(t, e, n) {
+    123: function (t, e, n) {
       'use strict'
       var r = n(3),
         o = (n(45), n(16), n(17), n(1)),
@@ -837,7 +839,7 @@
         var t = this
         return (
           this._fetchPromise ||
-            (this._fetchPromise = v.call(this).then(function() {
+            (this._fetchPromise = v.call(this).then(function () {
               delete t._fetchPromise
             })),
           this._fetchPromise
@@ -854,7 +856,7 @@
               r,
               o = this
             return regeneratorRuntime.wrap(
-              function(t) {
+              function (t) {
                 for (;;)
                   switch ((t.prev = t.next)) {
                     case 0:
@@ -883,7 +885,7 @@
                       }
                       return (
                         (t.next = 19),
-                        new Promise(function(t) {
+                        new Promise(function (t) {
                           return setTimeout(t, r)
                         })
                       )
@@ -891,7 +893,7 @@
                       ;(this.$fetchState.error = e),
                         (this.$fetchState.pending = !1),
                         (this.$fetchState.timestamp = Date.now()),
-                        this.$nextTick(function() {
+                        this.$nextTick(function () {
                           return o.$nuxt.nbFetching--
                         })
                     case 23:
@@ -907,7 +909,7 @@
         )).apply(this, arguments)
       }
       e.a = {
-        beforeCreate: function() {
+        beforeCreate: function () {
           Object(c.m)(this) &&
             ((this._fetchDelay =
               'number' == typeof this.$options.fetchDelay
@@ -916,17 +918,17 @@
             o.a.util.defineReactive(this, '$fetchState', {
               pending: !1,
               error: null,
-              timestamp: Date.now()
+              timestamp: Date.now(),
             }),
             (this.$fetch = m.bind(this)),
             Object(c.a)(this, 'created', h),
             Object(c.a)(this, 'beforeMount', l))
-        }
+        },
       }
     },
-    124: function(t, e, n) {
+    124: function (t, e, n) {
       'use strict'
-      n.d(e, 'a', function() {
+      n.d(e, 'a', function () {
         return l
       })
       n(17), n(16)
@@ -939,7 +941,7 @@
         if (o[t]) return o[t]
         var n,
           f,
-          l = (o[t] = new Promise(function(t, e) {
+          l = (o[t] = new Promise(function (t, e) {
             ;(n = t), (f = e)
           }))
         delete r[t]
@@ -947,26 +949,29 @@
           script = document.createElement('script')
         ;(script.charset = 'utf-8'), (script.timeout = 120), (script.src = e)
         var d = new Error(),
-          m = (script.onerror = script.onload = function(e) {
-            if (
-              (clearTimeout(h),
-              delete o[t],
-              (script.onerror = script.onload = null),
-              r[t])
-            )
-              return n(r[t])
-            var l = e && ('load' === e.type ? 'missing' : e.type),
-              m = e && e.target && e.target.src
-            ;(d.message =
-              'Loading chunk ' + t + ' failed.\n(' + l + ': ' + m + ')'),
-              (d.name = 'ChunkLoadError'),
-              (d.type = l),
-              (d.request = m),
-              (c[t] = d),
-              f(d)
-          })
+          m =
+            (script.onerror =
+            script.onload =
+              function (e) {
+                if (
+                  (clearTimeout(h),
+                  delete o[t],
+                  (script.onerror = script.onload = null),
+                  r[t])
+                )
+                  return n(r[t])
+                var l = e && ('load' === e.type ? 'missing' : e.type),
+                  m = e && e.target && e.target.src
+                ;(d.message =
+                  'Loading chunk ' + t + ' failed.\n(' + l + ': ' + m + ')'),
+                  (d.name = 'ChunkLoadError'),
+                  (d.type = l),
+                  (d.request = m),
+                  (c[t] = d),
+                  f(d)
+              })
         return (
-          (h = setTimeout(function() {
+          (h = setTimeout(function () {
             m({ type: 'timeout', target: script })
           }, 12e4)),
           document.head.appendChild(script),
@@ -974,17 +979,17 @@
         )
       }
       function l() {
-        ;(window.__NUXT_JSONP__ = function(t, e) {
+        ;(window.__NUXT_JSONP__ = function (t, e) {
           r[t] = e
         }),
           (window.__NUXT_JSONP_CACHE__ = r),
           (window.__NUXT_IMPORT__ = f)
       }
     },
-    127: function(t, e, n) {
+    127: function (t, e, n) {
       'use strict'
       n.r(e),
-        function(t) {
+        function (t) {
           n(37), n(30), n(43)
           var e = n(25),
             r = n(3),
@@ -1018,7 +1023,7 @@
             if (!n) {
               if (
                 Array.isArray(t) ||
-                (n = (function(t, e) {
+                (n = (function (t, e) {
                   if (!t) return
                   if ('string' == typeof t) return x(t, e)
                   var n = Object.prototype.toString.call(t).slice(8, -1)
@@ -1034,18 +1039,18 @@
               ) {
                 n && (t = n)
                 var i = 0,
-                  r = function() {}
+                  r = function () {}
                 return {
                   s: r,
-                  n: function() {
+                  n: function () {
                     return i >= t.length
                       ? { done: !0 }
                       : { done: !1, value: t[i++] }
                   },
-                  e: function(t) {
+                  e: function (t) {
                     throw t
                   },
-                  f: r
+                  f: r,
                 }
               }
               throw new TypeError(
@@ -1056,23 +1061,23 @@
               c = !0,
               f = !1
             return {
-              s: function() {
+              s: function () {
                 n = n.call(t)
               },
-              n: function() {
+              n: function () {
                 var t = n.next()
                 return (c = t.done), t
               },
-              e: function(t) {
+              e: function (t) {
                 ;(f = !0), (o = t)
               },
-              f: function() {
+              f: function () {
                 try {
                   c || null == n.return || n.return()
                 } finally {
                   if (f) throw o
                 }
-              }
+              },
             }
           }
           function x(t, e) {
@@ -1096,9 +1101,9 @@
           var C = o.a.config.errorHandler || console.error
           function k(t, e, n) {
             for (
-              var r = function(component) {
+              var r = function (component) {
                   var t =
-                    (function(component, t) {
+                    (function (component, t) {
                       if (
                         !component ||
                         !component.options ||
@@ -1124,16 +1129,16 @@
                 o = n ? Object(l.h)(n) : [],
                 c = Math.max(t.length, o.length),
                 f = [],
-                h = function(i) {
+                h = function (i) {
                   var e = Object.assign({}, r(t[i])),
                     n = Object.assign({}, r(o[i]))
                   Object.keys(e)
-                    .filter(function(t) {
+                    .filter(function (t) {
                       return (
                         void 0 !== e[t] && !t.toLowerCase().includes('leave')
                       )
                     })
-                    .forEach(function(t) {
+                    .forEach(function (t) {
                       n[t] = e[t]
                     }),
                     f.push(n)
@@ -1157,7 +1162,7 @@
                   h,
                   d = this
                 return regeneratorRuntime.wrap(
-                  function(t) {
+                  function (t) {
                     for (;;)
                       switch ((t.prev = t.next)) {
                         case 0:
@@ -1183,20 +1188,20 @@
                           }
                           return (
                             (t.next = 9),
-                            Object(l.r)(e, function(t, e) {
+                            Object(l.r)(e, function (t, e) {
                               return { Component: t, instance: e }
                             })
                           )
                         case 9:
                           ;(o = t.sent),
-                            o.some(function(t) {
+                            o.some(function (t) {
                               var r = t.Component,
                                 o = t.instance,
                                 c = r.options.watchQuery
                               return (
                                 !0 === c ||
                                 (Array.isArray(c)
-                                  ? c.some(function(t) {
+                                  ? c.some(function (t) {
                                       return d._diffQuery[t]
                                     })
                                   : 'function' == typeof c &&
@@ -1248,11 +1253,11 @@
           function R(t) {
             return Object(l.e)(
               t,
-              (function() {
+              (function () {
                 var t = Object(r.a)(
                   regeneratorRuntime.mark(function t(e, n, r, o, c) {
                     var f
-                    return regeneratorRuntime.wrap(function(t) {
+                    return regeneratorRuntime.wrap(function (t) {
                       for (;;)
                         switch ((t.prev = t.next)) {
                           case 0:
@@ -1279,7 +1284,7 @@
                     }, t)
                   })
                 )
-                return function(e, n, r, o, c) {
+                return function (e, n, r, o, c) {
                   return t.apply(this, arguments)
                 }
               })()
@@ -1294,17 +1299,17 @@
                 ((o = []),
                 (n = Object(l.s)(n)).options.middleware &&
                   (o = o.concat(n.options.middleware)),
-                t.forEach(function(t) {
+                t.forEach(function (t) {
                   t.options.middleware && (o = o.concat(t.options.middleware))
                 })),
-              (o = o.map(function(t) {
+              (o = o.map(function (t) {
                 return 'function' == typeof t
                   ? t
                   : ('function' != typeof f.a[t] &&
                       ((c = !0),
                       r.error({
                         statusCode: 500,
-                        message: 'Unknown middleware ' + t
+                        message: 'Unknown middleware ' + t,
                       })),
                     f.a[t])
               })),
@@ -1336,7 +1341,7 @@
                   N,
                   D = this
                 return regeneratorRuntime.wrap(
-                  function(t) {
+                  function (t) {
                     for (;;)
                       switch ((t.prev = t.next)) {
                         case 0:
@@ -1355,13 +1360,13 @@
                             e === n
                               ? (($ = []), (c = !0))
                               : ((f = []),
-                                ($ = Object(l.h)(n, f).map(function(t, i) {
+                                ($ = Object(l.h)(n, f).map(function (t, i) {
                                   return Object(l.c)(n.matched[f[i]].path)(
                                     n.params
                                   )
                                 }))),
                             (d = !1),
-                            (m = function(path) {
+                            (m = function (path) {
                               n.path === path.path &&
                                 D.$loading.finish &&
                                 D.$loading.finish(),
@@ -1374,7 +1379,7 @@
                             Object(l.t)(w, {
                               route: e,
                               from: n,
-                              next: m.bind(this)
+                              next: m.bind(this),
                             })
                           )
                         case 8:
@@ -1420,13 +1425,13 @@
                           return (
                             w.context.error({
                               statusCode: 404,
-                              message: 'This page could not be found'
+                              message: 'This page could not be found',
                             }),
                             t.abrupt('return', o())
                           )
                         case 27:
                           return (
-                            x.forEach(function(t) {
+                            x.forEach(function (t) {
                               t._Ctor &&
                                 t._Ctor.options &&
                                 ((t.options.asyncData =
@@ -1520,7 +1525,7 @@
                             (t.t1 = t.catch(48)),
                             this.error({
                               statusCode: t.t1.statusCode || '500',
-                              message: t.t1.message
+                              message: t.t1.message,
                             }),
                             t.abrupt('return', o())
                           )
@@ -1532,7 +1537,7 @@
                           return (
                             this.error({
                               statusCode: 404,
-                              message: 'This page could not be found'
+                              message: 'This page could not be found',
                             }),
                             t.abrupt('return', o())
                           )
@@ -1541,11 +1546,11 @@
                             (t.next = 82),
                             Promise.all(
                               x.map(
-                                (function() {
+                                (function () {
                                   var t = Object(r.a)(
                                     regeneratorRuntime.mark(function t(r, i) {
                                       var o, f, h, d, m, y, x, _, p
-                                      return regeneratorRuntime.wrap(function(
+                                      return regeneratorRuntime.wrap(function (
                                         t
                                       ) {
                                         for (;;)
@@ -1567,21 +1572,20 @@
                                                     (h = r.options.watchQuery)
                                                       ? (r._dataRefresh = !0)
                                                       : Array.isArray(h)
-                                                      ? (r._dataRefresh = h.some(
-                                                          function(t) {
-                                                            return D._diffQuery[
-                                                              t
-                                                            ]
-                                                          }
-                                                        ))
+                                                      ? (r._dataRefresh =
+                                                          h.some(function (t) {
+                                                            return D
+                                                              ._diffQuery[t]
+                                                          }))
                                                       : 'function' ==
                                                           typeof h &&
                                                         (R ||
                                                           (R = Object(l.i)(e)),
-                                                        (r._dataRefresh = h.apply(
-                                                          R[i],
-                                                          [e.query, n.query]
-                                                        )))),
+                                                        (r._dataRefresh =
+                                                          h.apply(R[i], [
+                                                            e.query,
+                                                            n.query,
+                                                          ])))),
                                                 D._hadError ||
                                                   !D._isMounted ||
                                                   r._dataRefresh)
@@ -1609,16 +1613,18 @@
                                                           w.context
                                                         )
                                                       : D.fetchPayload(e.path)
-                                                          .then(function(t) {
+                                                          .then(function (t) {
                                                             return t.data[i]
                                                           })
-                                                          .catch(function(t) {
+                                                          .catch(function (t) {
                                                             return Object(l.q)(
                                                               r.options
                                                                 .asyncData,
                                                               w.context
                                                             )
-                                                          })).then(function(t) {
+                                                          })).then(function (
+                                                    t
+                                                  ) {
                                                     Object(l.b)(r, t),
                                                       D.$loading.increase &&
                                                         D.$loading.increase(x)
@@ -1628,9 +1634,9 @@
                                                   c ||
                                                   d.push(
                                                     D.fetchPayload(e.path)
-                                                      .then(function(t) {
+                                                      .then(function (t) {
                                                         t.mutations.forEach(
-                                                          function(t) {
+                                                          function (t) {
                                                             D.$store.commit(
                                                               t[0],
                                                               t[1]
@@ -1638,7 +1644,7 @@
                                                           }
                                                         )
                                                       })
-                                                      .catch(function(t) {
+                                                      .catch(function (t) {
                                                         return null
                                                       })
                                                   ),
@@ -1649,7 +1655,7 @@
                                                   d.push(
                                                     D.fetchPayload(
                                                       e.path
-                                                    ).catch(function(t) {
+                                                    ).catch(function (t) {
                                                       return null
                                                     })
                                                   ),
@@ -1661,7 +1667,7 @@
                                                       'function' ==
                                                         typeof p.then)) ||
                                                     (p = Promise.resolve(p)),
-                                                  p.then(function(t) {
+                                                  p.then(function (t) {
                                                     D.$loading.increase &&
                                                       D.$loading.increase(x)
                                                   }),
@@ -1679,7 +1685,7 @@
                                       t)
                                     })
                                   )
-                                  return function(e, n) {
+                                  return function (e, n) {
                                     return t.apply(this, arguments)
                                   }
                                 })()
@@ -1731,14 +1737,14 @@
                   [
                     [29, 85],
                     [48, 73],
-                    [50, 65, 68, 71]
+                    [50, 65, 68, 71],
                   ]
                 )
               })
             )).apply(this, arguments)
           }
           function D(t, n) {
-            Object(l.e)(t, function(t, n, r, c) {
+            Object(l.e)(t, function (t, n, r, c) {
               return (
                 'object' !== Object(e.a)(t) ||
                   t.options ||
@@ -1772,8 +1778,8 @@
               var r = Object(l.i)(t),
                 c = Object(l.h)(t),
                 f = !1
-              o.a.nextTick(function() {
-                r.forEach(function(t, i) {
+              o.a.nextTick(function () {
+                r.forEach(function (t, i) {
                   if (
                     t &&
                     !t._isDestroyed &&
@@ -1788,7 +1794,7 @@
                   }
                 }),
                   f &&
-                    window.$nuxt.$nextTick(function() {
+                    window.$nuxt.$nextTick(function () {
                       window.$nuxt.$emit('triggerScroll')
                     }),
                   I(n)
@@ -1796,13 +1802,13 @@
             }
           }
           function U(t) {
-            window.onNuxtReadyCbs.forEach(function(e) {
+            window.onNuxtReadyCbs.forEach(function (e) {
               'function' == typeof e && e(t)
             }),
               'function' == typeof window._onNuxtLoaded &&
                 window._onNuxtLoaded(t),
-              _.afterEach(function(e, n) {
-                o.a.nextTick(function() {
+              _.afterEach(function (e, n) {
+                o.a.nextTick(function () {
                   return t.$nuxt.$emit('routeChanged', e, n)
                 })
               })
@@ -1812,7 +1818,7 @@
               regeneratorRuntime.mark(function t(e) {
                 var n, r, c, f, h, d
                 return regeneratorRuntime.wrap(
-                  function(t) {
+                  function (t) {
                     for (;;)
                       switch ((t.prev = t.next)) {
                         case 0:
@@ -1845,12 +1851,12 @@
                         case 17:
                           return (
                             n.setLayout(c),
-                            (f = function() {
+                            (f = function () {
                               n.$mount('#__nuxt'),
                                 _.afterEach(D),
                                 _.afterEach(L.bind(n)),
                                 _.afterEach(M.bind(n)),
-                                o.a.nextTick(function() {
+                                o.a.nextTick(function () {
                                   U(n)
                                 })
                             }),
@@ -1860,12 +1866,11 @@
                         case 21:
                           if (
                             ((h = t.sent),
-                            (n.setTransitions = n.$options.nuxt.setTransitions.bind(
-                              n
-                            )),
+                            (n.setTransitions =
+                              n.$options.nuxt.setTransitions.bind(n)),
                             h.length &&
                               (n.setTransitions(k(h, _.currentRoute)),
-                              ($ = _.currentRoute.matched.map(function(t) {
+                              ($ = _.currentRoute.matched.map(function (t) {
                                 return Object(l.c)(t.path)(
                                   _.currentRoute.params
                                 )
@@ -1882,30 +1887,33 @@
                           return t.abrupt('return', f())
                         case 30:
                           return (
-                            (d = function() {
+                            (d = function () {
                               D(_.currentRoute, _.currentRoute),
                                 L.call(n, _.currentRoute),
                                 I(n),
                                 f()
                             }),
                             (t.next = 33),
-                            new Promise(function(t) {
+                            new Promise(function (t) {
                               return setTimeout(t, 0)
                             })
                           )
                         case 33:
-                          A.call(n, _.currentRoute, _.currentRoute, function(
-                            path
-                          ) {
-                            if (path) {
-                              var t = _.afterEach(function(e, n) {
-                                t(), d()
-                              })
-                              _.push(path, void 0, function(t) {
-                                t && C(t)
-                              })
-                            } else d()
-                          })
+                          A.call(
+                            n,
+                            _.currentRoute,
+                            _.currentRoute,
+                            function (path) {
+                              if (path) {
+                                var t = _.afterEach(function (e, n) {
+                                  t(), d()
+                                })
+                                _.push(path, void 0, function (t) {
+                                  t && C(t)
+                                })
+                              } else d()
+                            }
+                          )
                         case 34:
                         case 'end':
                           return t.stop()
@@ -1919,41 +1927,41 @@
             )).apply(this, arguments)
           }
           Object(h.b)(null, O.config)
-            .then(function(t) {
+            .then(function (t) {
               return B.apply(this, arguments)
             })
             .catch(C)
         }.call(this, n(33))
     },
-    167: function(t, e, n) {
+    167: function (t, e, n) {
       'use strict'
       n(111)
     },
-    168: function(t, e, n) {
-      var r = n(18)(function(i) {
+    168: function (t, e, n) {
+      var r = n(18)(function (i) {
         return i[1]
       })
       r.push([t.i, '', '']), (r.locals = {}), (t.exports = r)
     },
-    169: function(t, e, n) {
+    169: function (t, e, n) {
       'use strict'
       n(112)
     },
-    170: function(t, e, n) {
-      var r = n(18)(function(i) {
+    170: function (t, e, n) {
+      var r = n(18)(function (i) {
         return i[1]
       })
       r.push([
         t.i,
         '.nuxt-progress{position:fixed;top:0;left:0;right:0;height:2px;width:0;opacity:1;-webkit-transition:width .1s,opacity .4s;transition:width .1s,opacity .4s;background-color:#fff;z-index:999999}',
-        ''
+        '',
       ]),
         (r.locals = {}),
         (t.exports = r)
     },
-    175: function(t, e, n) {
+    175: function (t, e, n) {
       'use strict'
-      t.exports = function(t, e) {
+      t.exports = function (t, e) {
         return (
           e || (e = {}),
           'string' != typeof (t = t && t.__esModule ? t.default : t)
@@ -1966,20 +1974,20 @@
         )
       }
     },
-    18: function(t, e, n) {
+    18: function (t, e, n) {
       'use strict'
-      t.exports = function(t) {
+      t.exports = function (t) {
         var e = []
         return (
-          (e.toString = function() {
-            return this.map(function(e) {
+          (e.toString = function () {
+            return this.map(function (e) {
               var content = t(e)
               return e[2]
                 ? '@media '.concat(e[2], ' {').concat(content, '}')
                 : content
             }).join('')
           }),
-          (e.i = function(t, n, r) {
+          (e.i = function (t, n, r) {
             'string' == typeof t && (t = [[null, t, '']])
             var o = {}
             if (r)
@@ -2001,7 +2009,7 @@
         )
       }
     },
-    19: function(t, e, n) {
+    19: function (t, e, n) {
       'use strict'
       function r(t, e) {
         for (var n = [], r = {}, i = 0; i < e.length; i++) {
@@ -2013,7 +2021,7 @@
         return n
       }
       n.r(e),
-        n.d(e, 'default', function() {
+        n.d(e, 'default', function () {
           return x
         })
       var o = 'undefined' != typeof document
@@ -2026,7 +2034,7 @@
         f = null,
         l = 0,
         h = !1,
-        d = function() {},
+        d = function () {},
         m = null,
         v = 'data-vue-ssr-id',
         y =
@@ -2037,7 +2045,7 @@
         var f = r(t, e)
         return (
           w(f),
-          function(e) {
+          function (e) {
             for (var n = [], i = 0; i < f.length; i++) {
               var o = f[i]
               ;(l = c[o.id]).refs--, n.push(l)
@@ -2089,12 +2097,12 @@
         } else
           (r = _()),
             (e = k.bind(null, r)),
-            (n = function() {
+            (n = function () {
               r.parentNode.removeChild(r)
             })
         return (
           e(t),
-          function(r) {
+          function (r) {
             if (r) {
               if (
                 r.css === t.css &&
@@ -2110,7 +2118,7 @@
       var O,
         j =
           ((O = []),
-          function(t, e) {
+          function (t, e) {
             return (O[t] = e), O.filter(Boolean).join('\n')
           })
       function C(t, e, n, r) {
@@ -2145,12 +2153,12 @@
         }
       }
     },
-    21: function(t, e, n) {
+    21: function (t, e, n) {
       'use strict'
-      n.d(e, 'b', function() {
+      n.d(e, 'b', function () {
         return Q
       }),
-        n.d(e, 'a', function() {
+        n.d(e, 'a', function () {
           return T
         })
       n(46), n(30), n(26), n(59), n(60)
@@ -2168,10 +2176,10 @@
         w = n(0)
       'scrollRestoration' in window.history &&
         (Object(w.u)('manual'),
-        window.addEventListener('beforeunload', function() {
+        window.addEventListener('beforeunload', function () {
           Object(w.u)('auto')
         }),
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
           Object(w.u)('manual')
         }))
       function _(object, t) {
@@ -2179,7 +2187,7 @@
         if (Object.getOwnPropertySymbols) {
           var n = Object.getOwnPropertySymbols(object)
           t &&
-            (n = n.filter(function(t) {
+            (n = n.filter(function (t) {
               return Object.getOwnPropertyDescriptor(object, t).enumerable
             })),
             e.push.apply(e, n)
@@ -2190,7 +2198,7 @@
         for (var i = 1; i < arguments.length; i++) {
           var source = null != arguments[i] ? arguments[i] : {}
           i % 2
-            ? _(Object(source), !0).forEach(function(e) {
+            ? _(Object(source), !0).forEach(function (e) {
                 Object(o.a)(t, e, source[e])
               })
             : Object.getOwnPropertyDescriptors
@@ -2198,7 +2206,7 @@
                 t,
                 Object.getOwnPropertyDescriptors(source)
               )
-            : _(Object(source)).forEach(function(e) {
+            : _(Object(source)).forEach(function (e) {
                 Object.defineProperty(
                   t,
                   e,
@@ -2208,26 +2216,26 @@
         }
         return t
       }
-      var O = function() {}
+      var O = function () {}
       c.a.use(y.a)
       var j = {
         mode: 'history',
         base: '/Vuemmerce/',
         linkActiveClass: 'nuxt-link-active',
         linkExactActiveClass: 'nuxt-link-exact-active',
-        scrollBehavior: function(t, e, n) {
+        scrollBehavior: function (t, e, n) {
           var r = !1,
             o = t !== e
           n
             ? (r = n)
             : o &&
-              (function(t) {
+              (function (t) {
                 var e = Object(w.h)(t)
                 if (1 === e.length) {
                   var n = e[0].options
                   return !1 !== (void 0 === n ? {} : n).scrollToTop
                 }
-                return e.some(function(t) {
+                return e.some(function (t) {
                   var e = t.options
                   return e && e.scrollToTop
                 })
@@ -2236,11 +2244,11 @@
           var c = window.$nuxt
           return (
             (!o || (t.path === e.path && t.hash !== e.hash)) &&
-              c.$nextTick(function() {
+              c.$nextTick(function () {
                 return c.$emit('triggerScroll')
               }),
-            new Promise(function(e) {
-              c.$once('triggerScroll', function() {
+            new Promise(function (e) {
+              c.$once('triggerScroll', function () {
                 if (t.hash) {
                   var n = t.hash
                   void 0 !== window.CSS &&
@@ -2262,33 +2270,33 @@
         routes: [
           {
             path: '/user/wishlist',
-            component: function() {
+            component: function () {
               return Object(w.n)(n.e(4).then(n.bind(null, 194)))
             },
-            name: 'user-wishlist'
+            name: 'user-wishlist',
           },
           {
             path: '/product_detail/:id?',
-            component: function() {
+            component: function () {
               return Object(w.n)(n.e(3).then(n.bind(null, 195)))
             },
-            name: 'product_detail-id'
+            name: 'product_detail-id',
           },
           {
             path: '/',
-            component: function() {
+            component: function () {
               return Object(w.n)(n.e(2).then(n.bind(null, 193)))
             },
-            name: 'index'
-          }
+            name: 'index',
+          },
         ],
-        fallback: !1
+        fallback: !1,
       }
       function C(t, e) {
         var base = (e._app && e._app.basePath) || j.base,
           n = new y.a($($({}, j), {}, { base: base })),
           r = n.push
-        n.push = function(t) {
+        n.push = function (t) {
           var e =
               arguments.length > 1 && void 0 !== arguments[1]
                 ? arguments[1]
@@ -2298,7 +2306,7 @@
         }
         var o = n.resolve.bind(n)
         return (
-          (n.resolve = function(t, e, n) {
+          (n.resolve = function (t, e, n) {
             return 'string' == typeof t && (t = Object(x.d)(t)), o(t, e, n)
           }),
           n
@@ -2310,9 +2318,9 @@
           props: {
             nuxtChildKey: { type: String, default: '' },
             keepAlive: Boolean,
-            keepAliveProps: { type: Object, default: void 0 }
+            keepAliveProps: { type: Object, default: void 0 },
           },
-          render: function(t, e) {
+          render: function (t, e) {
             var n = e.parent,
               data = e.data,
               r = e.props,
@@ -2330,18 +2338,18 @@
             data.nuxtChildDepth = h
             var d = f[h] || l,
               m = {}
-            P.forEach(function(t) {
+            P.forEach(function (t) {
               void 0 !== d[t] && (m[t] = d[t])
             })
             var v = {}
-            S.forEach(function(t) {
+            S.forEach(function (t) {
               'function' == typeof d[t] && (v[t] = d[t].bind(c))
             })
             var y = v.beforeEnter
             if (
-              ((v.beforeEnter = function(t) {
+              ((v.beforeEnter = function (t) {
                 if (
-                  (window.$nuxt.$nextTick(function() {
+                  (window.$nuxt.$nextTick(function () {
                     window.$nuxt.$emit('triggerScroll')
                   }),
                   y)
@@ -2352,7 +2360,7 @@
             ) {
               var x = v.leave
               ;(!x || x.length < 2) &&
-                (v.leave = function(t, e) {
+                (v.leave = function (t, e) {
                   x && x.call(c, t), c.$nextTick(e)
                 })
             }
@@ -2362,7 +2370,7 @@
                 (w = o('keep-alive', { props: r.keepAliveProps }, [w])),
               o('transition', { props: m, on: v }, [w])
             )
-          }
+          },
         },
         P = [
           'name',
@@ -2380,7 +2388,7 @@
           'appearActiveClass',
           'enterToClass',
           'leaveToClass',
-          'appearToClass'
+          'appearToClass',
         ],
         S = [
           'beforeEnter',
@@ -2394,36 +2402,36 @@
           'beforeAppear',
           'appear',
           'afterAppear',
-          'appearCancelled'
+          'appearCancelled',
         ],
         E = {
           name: 'NuxtError',
           props: { error: { type: Object, default: null } },
           computed: {
-            statusCode: function() {
+            statusCode: function () {
               return (this.error && this.error.statusCode) || 500
             },
-            message: function() {
+            message: function () {
               return this.error.message || 'Error'
-            }
+            },
           },
-          head: function() {
+          head: function () {
             return {
               title: this.message,
               meta: [
                 {
                   name: 'viewport',
                   content:
-                    'width=device-width,initial-scale=1.0,minimum-scale=1.0'
-                }
-              ]
+                    'width=device-width,initial-scale=1.0,minimum-scale=1.0',
+                },
+              ],
             }
-          }
+          },
         },
         R = (n(167), n(6)),
         T = Object(R.a)(
           E,
-          function() {
+          function () {
             var t = this,
               e = t.$createElement,
               n = t._self._c || e
@@ -2437,16 +2445,15 @@
                       width: '90',
                       height: '90',
                       fill: '#DBE1EC',
-                      viewBox: '0 0 48 48'
-                    }
+                      viewBox: '0 0 48 48',
+                    },
                   },
                   [
                     n('path', {
                       attrs: {
-                        d:
-                          'M22 30h4v4h-4zm0-16h4v12h-4zm1.99-10C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z'
-                      }
-                    })
+                        d: 'M22 30h4v4h-4zm0-16h4v12h-4zm1.99-10C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z',
+                      },
+                    }),
                   ]
                 ),
                 t._v(' '),
@@ -2460,24 +2467,24 @@
                         void 0 === t.$route
                           ? n('a', {
                               staticClass: 'error-link',
-                              attrs: { href: '/' }
+                              attrs: { href: '/' },
                             })
                           : n(
                               'NuxtLink',
                               { staticClass: 'error-link', attrs: { to: '/' } },
                               [t._v('Back to the home page')]
-                            )
+                            ),
                       ],
                       1
                     )
                   : t._e(),
                 t._v(' '),
-                t._m(0)
-              ])
+                t._m(0),
+              ]),
             ])
           },
           [
-            function() {
+            function () {
               var t = this,
                 e = t.$createElement,
                 n = t._self._c || e
@@ -2488,13 +2495,13 @@
                     attrs: {
                       href: 'https://nuxtjs.org',
                       target: '_blank',
-                      rel: 'noopener'
-                    }
+                      rel: 'noopener',
+                    },
                   },
                   [t._v('Nuxt')]
-                )
+                ),
               ])
-            }
+            },
           ],
           !1,
           null,
@@ -2512,14 +2519,14 @@
               nuxtChildKey: { type: String, default: void 0 },
               keepAlive: Boolean,
               keepAliveProps: { type: Object, default: void 0 },
-              name: { type: String, default: 'default' }
+              name: { type: String, default: 'default' },
             },
-            errorCaptured: function(t) {
+            errorCaptured: function (t) {
               this.displayingNuxtError &&
                 ((this.errorFromNuxtError = t), this.$forceUpdate())
             },
             computed: {
-              routerViewKey: function() {
+              routerViewKey: function () {
                 if (
                   void 0 !== this.nuxtChildKey ||
                   this.$route.matched.length > 1
@@ -2541,16 +2548,16 @@
                 return /\/$/.test(t.path)
                   ? this.$route.path
                   : this.$route.path.replace(/\/$/, '')
-              }
+              },
             },
-            beforeCreate: function() {
+            beforeCreate: function () {
               c.a.util.defineReactive(this, 'nuxt', this.$root.$options.nuxt)
             },
-            render: function(t) {
+            render: function (t) {
               var e = this
               return this.nuxt.err
                 ? this.errorFromNuxtError
-                  ? (this.$nextTick(function() {
+                  ? (this.$nextTick(function () {
                       return (e.errorFromNuxtError = !1)
                     }),
                     t('div', {}, [
@@ -2565,18 +2572,18 @@
                           this.errorFromNuxtError.toString()
                         )
                       ),
-                      t('nuxt-link', { props: { to: '/' } }, 'Go back to home')
+                      t('nuxt-link', { props: { to: '/' } }, 'Go back to home'),
                     ]))
                   : ((this.displayingNuxtError = !0),
-                    this.$nextTick(function() {
+                    this.$nextTick(function () {
                       return (e.displayingNuxtError = !1)
                     }),
                     t(T, { props: { error: this.nuxt.err } }))
                 : t('NuxtChild', {
                     key: this.routerViewKey,
-                    props: this.$props
+                    props: this.$props,
                   })
-            }
+            },
           }),
         D =
           (n(37),
@@ -2587,7 +2594,7 @@
           n(58),
           {
             name: 'NuxtLoading',
-            data: function() {
+            data: function () {
               return {
                 percent: 0,
                 show: !1,
@@ -2597,11 +2604,11 @@
                 rtl: !1,
                 throttle: 200,
                 duration: 5e3,
-                continuous: !1
+                continuous: !1,
               }
             },
             computed: {
-              left: function() {
+              left: function () {
                 return (
                   !(!this.continuous && !this.rtl) &&
                   (this.rtl
@@ -2612,18 +2619,18 @@
                     ? 'auto'
                     : '0px')
                 )
-              }
+              },
             },
-            beforeDestroy: function() {
+            beforeDestroy: function () {
               this.clear()
             },
             methods: {
-              clear: function() {
+              clear: function () {
                 clearInterval(this._timer),
                   clearTimeout(this._throttle),
                   (this._timer = null)
               },
-              start: function() {
+              start: function () {
                 var t = this
                 return (
                   this.clear(),
@@ -2632,14 +2639,14 @@
                   (this.skipTimerCount = 0),
                   (this.canSucceed = !0),
                   this.throttle
-                    ? (this._throttle = setTimeout(function() {
+                    ? (this._throttle = setTimeout(function () {
                         return t.startTimer()
                       }, this.throttle))
                     : this.startTimer(),
                   this
                 )
               },
-              set: function(t) {
+              set: function (t) {
                 return (
                   (this.show = !0),
                   (this.canSucceed = !0),
@@ -2647,54 +2654,54 @@
                   this
                 )
               },
-              get: function() {
+              get: function () {
                 return this.percent
               },
-              increase: function(t) {
+              increase: function (t) {
                 return (
                   (this.percent = Math.min(100, Math.floor(this.percent + t))),
                   this
                 )
               },
-              decrease: function(t) {
+              decrease: function (t) {
                 return (
                   (this.percent = Math.max(0, Math.floor(this.percent - t))),
                   this
                 )
               },
-              pause: function() {
+              pause: function () {
                 return clearInterval(this._timer), this
               },
-              resume: function() {
+              resume: function () {
                 return this.startTimer(), this
               },
-              finish: function() {
+              finish: function () {
                 return (
                   (this.percent = this.reversed ? 0 : 100), this.hide(), this
                 )
               },
-              hide: function() {
+              hide: function () {
                 var t = this
                 return (
                   this.clear(),
-                  setTimeout(function() {
+                  setTimeout(function () {
                     ;(t.show = !1),
-                      t.$nextTick(function() {
+                      t.$nextTick(function () {
                         ;(t.percent = 0), (t.reversed = !1)
                       })
                   }, 500),
                   this
                 )
               },
-              fail: function(t) {
+              fail: function (t) {
                 return (this.canSucceed = !1), this
               },
-              startTimer: function() {
+              startTimer: function () {
                 var t = this
                 this.show || (this.show = !0),
                   void 0 === this._cut &&
                     (this._cut = 1e4 / Math.floor(this.duration)),
-                  (this._timer = setInterval(function() {
+                  (this._timer = setInterval(function () {
                     t.skipTimerCount > 0
                       ? t.skipTimerCount--
                       : (t.reversed ? t.decrease(t._cut) : t.increase(t._cut),
@@ -2702,9 +2709,9 @@
                           (t.percent >= 100 || t.percent <= 0) &&
                           ((t.skipTimerCount = 1), (t.reversed = !t.reversed)))
                   }, 100))
-              }
+              },
             },
-            render: function(t) {
+            render: function (t) {
               var e = t(!1)
               return (
                 this.show &&
@@ -2712,13 +2719,13 @@
                     staticClass: 'nuxt-progress',
                     class: {
                       'nuxt-progress-notransition': this.skipTimerCount > 0,
-                      'nuxt-progress-failed': !this.canSucceed
+                      'nuxt-progress-failed': !this.canSucceed,
                     },
-                    style: { width: this.percent + '%', left: this.left }
+                    style: { width: this.percent + '%', left: this.left },
                   })),
                 e
               )
-            }
+            },
           }),
         L =
           (n(169),
@@ -2731,7 +2738,7 @@
         if (!n) {
           if (
             Array.isArray(t) ||
-            (n = (function(t, e) {
+            (n = (function (t, e) {
               if (!t) return
               if ('string' == typeof t) return U(t, e)
               var n = Object.prototype.toString.call(t).slice(8, -1)
@@ -2747,18 +2754,18 @@
           ) {
             n && (t = n)
             var i = 0,
-              r = function() {}
+              r = function () {}
             return {
               s: r,
-              n: function() {
+              n: function () {
                 return i >= t.length
                   ? { done: !0 }
                   : { done: !1, value: t[i++] }
               },
-              e: function(t) {
+              e: function (t) {
                 throw t
               },
-              f: r
+              f: r,
             }
           }
           throw new TypeError(
@@ -2769,23 +2776,23 @@
           c = !0,
           f = !1
         return {
-          s: function() {
+          s: function () {
             n = n.call(t)
           },
-          n: function() {
+          n: function () {
             var t = n.next()
             return (c = t.done), t
           },
-          e: function(t) {
+          e: function (t) {
             ;(f = !0), (o = t)
           },
-          f: function() {
+          f: function () {
             try {
               c || null == n.return || n.return()
             } finally {
               if (f) throw o
             }
-          }
+          },
         }
       }
       function U(t, e) {
@@ -2795,7 +2802,7 @@
       }
       var B = { _default: Object(w.s)(I.a) },
         K = {
-          render: function(t, e) {
+          render: function (t, e) {
             var n = t('NuxtLoading', { ref: 'loading' }),
               r = t(this.layout || 'nuxt'),
               o = t(
@@ -2808,24 +2815,24 @@
                 {
                   props: { name: 'layout', mode: 'out-in' },
                   on: {
-                    beforeEnter: function(t) {
-                      window.$nuxt.$nextTick(function() {
+                    beforeEnter: function (t) {
+                      window.$nuxt.$nextTick(function () {
                         window.$nuxt.$emit('triggerScroll')
                       })
-                    }
-                  }
+                    },
+                  },
                 },
                 [o]
               )
             return t('div', { domProps: { id: '__nuxt' } }, [n, c])
           },
-          data: function() {
+          data: function () {
             return { isOnline: !0, layout: null, layoutName: '', nbFetching: 0 }
           },
-          beforeCreate: function() {
+          beforeCreate: function () {
             c.a.util.defineReactive(this, 'nuxt', this.$options.nuxt)
           },
-          created: function() {
+          created: function () {
             ;(this.$root.$options.$nuxt = this),
               (window.$nuxt = this),
               this.refreshOnlineStatus(),
@@ -2834,11 +2841,11 @@
               (this.error = this.nuxt.error),
               (this.context = this.$options.context)
           },
-          mounted: function() {
+          mounted: function () {
             var t = this
             return Object(r.a)(
               regeneratorRuntime.mark(function e() {
-                return regeneratorRuntime.wrap(function(e) {
+                return regeneratorRuntime.wrap(function (e) {
                   for (;;)
                     switch ((e.prev = e.next)) {
                       case 0:
@@ -2869,29 +2876,29 @@
           },
           watch: { 'nuxt.err': 'errorChanged' },
           computed: {
-            isOffline: function() {
+            isOffline: function () {
               return !this.isOnline
             },
-            isFetching: function() {
+            isFetching: function () {
               return this.nbFetching > 0
             },
-            isPreview: function() {
+            isPreview: function () {
               return Boolean(this.$options.previewData)
-            }
+            },
           },
           methods: {
-            refreshOnlineStatus: function() {
+            refreshOnlineStatus: function () {
               void 0 === window.navigator.onLine
                 ? (this.isOnline = !0)
                 : (this.isOnline = window.navigator.onLine)
             },
-            refresh: function() {
+            refresh: function () {
               var t = this
               return Object(r.a)(
                 regeneratorRuntime.mark(function e() {
                   var n, r
                   return regeneratorRuntime.wrap(
-                    function(e) {
+                    function (e) {
                       for (;;)
                         switch ((e.prev = e.next)) {
                           case 0:
@@ -2903,7 +2910,7 @@
                           case 3:
                             return (
                               t.$loading.start(),
-                              (r = n.map(function(e) {
+                              (r = n.map(function (e) {
                                 var p = []
                                 if (
                                   (e.$options.fetch &&
@@ -2936,7 +2943,7 @@
                                       Object(w.q)(
                                         e.$options.asyncData,
                                         t.context
-                                      ).then(function(t) {
+                                      ).then(function (t) {
                                         for (var n in t)
                                           c.a.set(e.$data, n, t[n])
                                       })
@@ -2971,7 +2978,7 @@
                 })
               )()
             },
-            errorChanged: function() {
+            errorChanged: function () {
               if (this.nuxt.err) {
                 this.$loading &&
                   (this.$loading.fail && this.$loading.fail(this.nuxt.err),
@@ -2981,7 +2988,7 @@
                   this.setLayout(t)
               }
             },
-            setLayout: function(t) {
+            setLayout: function (t) {
               return (
                 (t && B['_' + t]) || (t = 'default'),
                 (this.layoutName = t),
@@ -2989,16 +2996,16 @@
                 this.layout
               )
             },
-            loadLayout: function(t) {
+            loadLayout: function (t) {
               return (
                 (t && B['_' + t]) || (t = 'default'),
                 Promise.resolve(B['_' + t])
               )
             },
-            getRouterBase: function() {
+            getRouterBase: function () {
               return Object(x.h)(this.$router.options.base)
             },
-            getRoutePath: function() {
+            getRoutePath: function () {
               var t =
                   arguments.length > 0 && void 0 !== arguments[0]
                     ? arguments[0]
@@ -3006,7 +3013,7 @@
                 base = this.getRouterBase()
               return Object(x.h)(Object(x.g)(Object(x.e)(t).pathname, base))
             },
-            getStaticAssetsPath: function() {
+            getStaticAssetsPath: function () {
               var t =
                   arguments.length > 0 && void 0 !== arguments[0]
                     ? arguments[0]
@@ -3014,11 +3021,11 @@
                 e = window.__NUXT__.staticAssetsBase
               return Object(w.v)(e, this.getRoutePath(t))
             },
-            fetchStaticManifest: function() {
+            fetchStaticManifest: function () {
               var t = this
               return Object(r.a)(
                 regeneratorRuntime.mark(function e() {
-                  return regeneratorRuntime.wrap(function(e) {
+                  return regeneratorRuntime.wrap(function (e) {
                     for (;;)
                       switch ((e.prev = e.next)) {
                         case 0:
@@ -3042,16 +3049,16 @@
                 })
               )()
             },
-            setPagePayload: function(t) {
+            setPagePayload: function (t) {
               ;(this._pagePayload = t), (this._fetchCounters = {})
             },
-            fetchPayload: function(t, e) {
+            fetchPayload: function (t, e) {
               var n = this
               return Object(r.a)(
                 regeneratorRuntime.mark(function r() {
                   var path, o, c
                   return regeneratorRuntime.wrap(
-                    function(r) {
+                    function (r) {
                       for (;;)
                         switch ((r.prev = r.next)) {
                           case 0:
@@ -3065,10 +3072,12 @@
                               r.next = 7
                               break
                             }
-                            throw (e || n.setPagePayload(!1),
-                            new Error(
-                              'Route '.concat(path, ' is not pre-rendered')
-                            ))
+                            throw (
+                              (e || n.setPagePayload(!1),
+                              new Error(
+                                'Route '.concat(path, ' is not pre-rendered')
+                              ))
+                            )
                           case 7:
                             return (
                               (o = Object(w.v)(
@@ -3086,10 +3095,12 @@
                               r.abrupt('return', c)
                             )
                           case 16:
-                            throw ((r.prev = 16),
-                            (r.t0 = r.catch(8)),
-                            e || n.setPagePayload(!1),
-                            r.t0)
+                            throw (
+                              ((r.prev = 16),
+                              (r.t0 = r.catch(8)),
+                              e || n.setPagePayload(!1),
+                              r.t0)
+                            )
                           case 20:
                           case 'end':
                             return r.stop()
@@ -3101,13 +3112,13 @@
                   )
                 })
               )()
-            }
+            },
           },
-          components: { NuxtLoading: L }
+          components: { NuxtLoading: L },
         }
       c.a.use(f.a)
       var z = {}
-      ;(z = (function(t, e) {
+      ;(z = (function (t, e) {
         if ((t = t.default || t).commit)
           throw new Error(
             '[nuxt] '.concat(
@@ -3117,7 +3128,7 @@
           )
         return (
           'function' != typeof t && (t = Object.assign({}, t)),
-          (function(t, e) {
+          (function (t, e) {
             if (t.state && 'function' != typeof t.state) {
               console.warn(
                 "'state' should be a method that returns an object in ".concat(
@@ -3126,9 +3137,9 @@
               )
               var n = Object.assign({}, t.state)
               t = Object.assign({}, t, {
-                state: function() {
+                state: function () {
                   return n
-                }
+                },
               })
             }
             return t
@@ -3138,7 +3149,7 @@
       var F =
         z instanceof Function
           ? z
-          : function() {
+          : function () {
               return new f.a.Store(Object.assign({ strict: !1 }, z))
             }
       function X(object, t) {
@@ -3146,7 +3157,7 @@
         if (Object.getOwnPropertySymbols) {
           var n = Object.getOwnPropertySymbols(object)
           t &&
-            (n = n.filter(function(t) {
+            (n = n.filter(function (t) {
               return Object.getOwnPropertyDescriptor(object, t).enumerable
             })),
             e.push.apply(e, n)
@@ -3157,7 +3168,7 @@
         for (var i = 1; i < arguments.length; i++) {
           var source = null != arguments[i] ? arguments[i] : {}
           i % 2
-            ? X(Object(source), !0).forEach(function(e) {
+            ? X(Object(source), !0).forEach(function (e) {
                 Object(o.a)(t, e, source[e])
               })
             : Object.getOwnPropertyDescriptors
@@ -3165,7 +3176,7 @@
                 t,
                 Object.getOwnPropertyDescriptors(source)
               )
-            : X(Object(source)).forEach(function(e) {
+            : X(Object(source)).forEach(function (e) {
                 Object.defineProperty(
                   t,
                   e,
@@ -3182,7 +3193,7 @@
             H({}, v.a),
             {},
             {
-              render: function(t, e) {
+              render: function (t, e) {
                 return (
                   v.a._warned ||
                     ((v.a._warned = !0),
@@ -3191,7 +3202,7 @@
                     )),
                   v.a.render(t, e)
                 )
-              }
+              },
             }
           )
         ),
@@ -3199,17 +3210,17 @@
         c.a.component('NChild', k),
         c.a.component(N.name, N),
         Object.defineProperty(c.a.prototype, '$nuxt', {
-          get: function() {
+          get: function () {
             var t = this.$root.$options.$nuxt
             return t || 'undefined' == typeof window ? t : window.$nuxt
           },
-          configurable: !0
+          configurable: !0,
         }),
         c.a.use(l.a, {
           keyName: 'head',
           attribute: 'data-n-head',
           ssrAttribute: 'data-n-head-ssr',
-          tagIDKeyName: 'hid'
+          tagIDKeyName: 'hid',
         })
       var J = {
           name: 'page',
@@ -3217,14 +3228,14 @@
           appear: !1,
           appearClass: 'appear',
           appearActiveClass: 'appear-active',
-          appearToClass: 'appear-to'
+          appearToClass: 'appear-to',
         },
         V = f.a.Store.prototype.registerModule
       function G(path, t) {
         var e =
             arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {},
           n = Array.isArray(path)
-            ? !!path.reduce(function(t, path) {
+            ? !!path.reduce(function (t, path) {
                 return t && t[path]
               }, this.state)
             : path in this.state
@@ -3245,12 +3256,12 @@
               path,
               m,
               v = arguments
-            return regeneratorRuntime.wrap(function(t) {
+            return regeneratorRuntime.wrap(function (t) {
               for (;;)
                 switch ((t.prev = t.next)) {
                   case 0:
                     return (
-                      (m = function(t, e) {
+                      (m = function (t, e) {
                         if (!t)
                           throw new Error(
                             'inject(key, value) has no key provided'
@@ -3268,15 +3279,15 @@
                         var n = '__nuxt_' + t + '_installed__'
                         c.a[n] ||
                           ((c.a[n] = !0),
-                          c.a.use(function() {
+                          c.a.use(function () {
                             Object.prototype.hasOwnProperty.call(
                               c.a.prototype,
                               t
                             ) ||
                               Object.defineProperty(c.a.prototype, t, {
-                                get: function() {
+                                get: function () {
                                   return this.$root.$options[t]
-                                }
+                                },
                               })
                           }))
                       }),
@@ -3292,175 +3303,173 @@
                       (l = H(
                         {
                           head: {
-                            title: 'ECG Portal',
+                            title: 'VeggieChain',
                             meta: [
                               { charset: 'utf-8' },
                               {
                                 name: 'viewport',
-                                content: 'width=device-width, initial-scale=1'
+                                content: 'width=device-width, initial-scale=1',
                               },
                               {
                                 hid: 'description',
                                 name: 'description',
-                                content: 'ECG Portal'
+                                content: 'VeggieChain',
                               },
                               {
                                 'http-equiv': 'x-ua-compatible',
-                                content: 'ie=edge'
+                                content: 'ie=edge',
                               },
                               {
                                 name: 'msapplication-TileColor',
-                                content: '#ffffff'
+                                content: '#ffffff',
                               },
                               {
                                 name: 'msapplication-TileImage',
-                                content: '/ms-icon-144x144.png'
+                                content: '/ms-icon-144x144.png',
                               },
                               { name: 'theme-color', content: '#ffffff' },
                               { property: 'og:type', content: 'website' },
                               {
                                 property: 'og:url',
-                                content: 'https://example.com/page.html'
+                                content: 'https://example.com/page.html',
                               },
                               {
                                 property: 'og:title',
-                                content: 'Content Title'
+                                content: 'Content Title',
                               },
                               {
                                 property: 'og:image',
-                                content: 'https://example.com/image.jpg'
+                                content: 'https://example.com/image.jpg',
                               },
                               {
                                 property: 'og:description',
-                                content: 'Description Here'
+                                content: 'Description Here',
                               },
                               {
                                 property: 'og:site_name',
-                                content: 'Site Name'
+                                content: 'Site Name',
                               },
                               { property: 'og:locale', content: 'en_US' },
                               { property: 'twitter:card', content: 'summary' },
                               {
                                 property: 'twitter:site',
-                                content: '@site_account'
+                                content: '@site_account',
                               },
                               {
                                 property: 'twitter:creator',
-                                content: '@individual_account'
+                                content: '@individual_account',
                               },
                               {
                                 property: 'twitter:url',
-                                content: 'https://example.com/page.html'
+                                content: 'https://example.com/page.html',
                               },
                               {
                                 property: 'twitter:title',
-                                content: 'Content Title'
+                                content: 'Content Title',
                               },
                               {
                                 property: 'twitter:description',
                                 content:
-                                  'Content description less than 200 characters'
+                                  'Content description less than 200 characters',
                               },
                               {
                                 property: 'twitter:image',
-                                content: 'https://example.com/image.jpg'
-                              }
+                                content: 'https://example.com/image.jpg',
+                              },
                             ],
                             link: [
                               {
                                 rel: 'icon',
                                 type: 'image/x-icon',
-                                href: '/favicon.ico'
+                                href: '/favicon.ico',
                               },
                               {
                                 rel: 'icon',
                                 type: 'image/png',
                                 sizes: '192x192',
-                                href: '/android-icon-192x192.png'
+                                href: '/android-icon-192x192.png',
                               },
                               {
                                 rel: 'icon',
                                 type: 'image/png',
                                 sizes: '96x96',
-                                href: '/favicon-96x96.png'
+                                href: '/favicon-96x96.png',
                               },
                               {
                                 rel: 'icon',
                                 type: 'image/png',
                                 sizes: '16x16',
-                                href: '/favicon-16x16.png'
+                                href: '/favicon-16x16.png',
                               },
                               {
                                 rel: 'apple-touch-icon',
                                 sizes: '57x57',
-                                href: '/apple-icon-57x57.png'
+                                href: '/apple-icon-57x57.png',
                               },
                               {
                                 rel: 'apple-touch-icon',
                                 sizes: '60x60',
-                                href: '/apple-icon-60x60.png'
+                                href: '/apple-icon-60x60.png',
                               },
                               {
                                 rel: 'apple-touch-icon',
                                 sizes: '72x72',
-                                href: '/apple-icon-72x72.png'
+                                href: '/apple-icon-72x72.png',
                               },
                               {
                                 rel: 'apple-touch-icon',
                                 sizes: '76x76',
-                                href: '/apple-icon-76x76.png'
+                                href: '/apple-icon-76x76.png',
                               },
                               {
                                 rel: 'apple-touch-icon',
                                 sizes: '114x114',
-                                href: '/apple-icon-114x114.png'
+                                href: '/apple-icon-114x114.png',
                               },
                               {
                                 rel: 'apple-touch-icon',
                                 sizes: '120x120',
-                                href: '/apple-icon-120x120.png'
+                                href: '/apple-icon-120x120.png',
                               },
                               {
                                 rel: 'apple-touch-icon',
                                 sizes: '144x144',
-                                href: '/apple-icon-144x144.png'
+                                href: '/apple-icon-144x144.png',
                               },
                               {
                                 rel: 'apple-touch-icon',
                                 sizes: '152x152',
-                                href: '/apple-icon-152x152.png'
+                                href: '/apple-icon-152x152.png',
                               },
                               {
                                 rel: 'apple-touch-icon',
                                 sizes: '180x180',
-                                href: '/apple-icon-180x180.png'
+                                href: '/apple-icon-180x180.png',
                               },
                               {
                                 rel: 'stylesheet',
-                                href:
-                                  'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+                                href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons',
                               },
                               {
                                 rel: 'stylesheet',
                                 integrity:
                                   'sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p',
                                 crossorigin: 'anonymous',
-                                href:
-                                  'https://pro.fontawesome.com/releases/v5.10.0/css/all.css'
-                              }
+                                href: 'https://pro.fontawesome.com/releases/v5.10.0/css/all.css',
+                              },
                             ],
                             style: [],
-                            script: []
+                            script: [],
                           },
                           store: f,
                           router: o,
                           nuxt: {
                             defaultTransition: J,
                             transitions: [J],
-                            setTransitions: function(t) {
+                            setTransitions: function (t) {
                               return (
                                 Array.isArray(t) || (t = [t]),
-                                (t = t.map(function(t) {
+                                (t = t.map(function (t) {
                                   return (t = t
                                     ? 'string' == typeof t
                                       ? Object.assign({}, J, { name: t })
@@ -3473,7 +3482,7 @@
                             },
                             err: null,
                             dateErr: null,
-                            error: function(t) {
+                            error: function (t) {
                               ;(t = t || null),
                                 (l.context._errored = Boolean(t)),
                                 (t = t ? Object(w.p)(t) : null)
@@ -3485,15 +3494,15 @@
                                 e && (e.nuxt.error = t),
                                 t
                               )
-                            }
-                          }
+                            },
+                          },
                         },
                         K
                       )),
                       (f.app = l),
                       (h = e
                         ? e.next
-                        : function(t) {
+                        : function (t) {
                             return l.router.push(t)
                           }),
                       e
@@ -3510,7 +3519,7 @@
                         req: e ? e.req : void 0,
                         res: e ? e.res : void 0,
                         beforeRenderFns: e ? e.beforeRenderFns : void 0,
-                        ssrContext: e
+                        ssrContext: e,
                       })
                     )
                   case 14:
@@ -3519,33 +3528,33 @@
                       window.__NUXT__ &&
                         window.__NUXT__.state &&
                         f.replaceState(window.__NUXT__.state),
-                      (l.context.enablePreview = function() {
+                      (l.context.enablePreview = function () {
                         var t =
                           arguments.length > 0 && void 0 !== arguments[0]
                             ? arguments[0]
                             : {}
                         ;(l.previewData = Object.assign({}, t)), m('preview', t)
                       }),
-                      (l.context.enablePreview = function() {
+                      (l.context.enablePreview = function () {
                         console.warn(
                           'You cannot call enablePreview() outside a plugin.'
                         )
                       }),
                       (t.next = 20),
-                      new Promise(function(t, e) {
+                      new Promise(function (t, e) {
                         if (
                           !o.resolve(l.context.route.fullPath).route.matched
                             .length
                         )
                           return t()
-                        o.replace(l.context.route.fullPath, t, function(n) {
+                        o.replace(l.context.route.fullPath, t, function (n) {
                           if (!n._isRouter) return e(n)
                           if (2 !== n.type) return t()
                           var c = o.afterEach(
-                            (function() {
+                            (function () {
                               var e = Object(r.a)(
                                 regeneratorRuntime.mark(function e(n, r) {
-                                  return regeneratorRuntime.wrap(function(e) {
+                                  return regeneratorRuntime.wrap(function (e) {
                                     for (;;)
                                       switch ((e.prev = e.next)) {
                                         case 0:
@@ -3563,7 +3572,7 @@
                                   }, e)
                                 })
                               )
-                              return function(t, n) {
+                              return function (t, n) {
                                 return e.apply(this, arguments)
                               }
                             })()
@@ -3582,16 +3591,16 @@
         )).apply(this, arguments)
       }
     },
-    36: function(t, e, n) {
+    36: function (t, e, n) {
       'use strict'
       var r = {
         name: 'NoSsr',
         functional: !0,
         props: {
           placeholder: String,
-          placeholderTag: { type: String, default: 'div' }
+          placeholderTag: { type: String, default: 'div' },
         },
-        render: function(t, e) {
+        render: function (t, e) {
           var n = e.parent,
             r = e.slots,
             o = e.props,
@@ -3601,7 +3610,7 @@
           var l = c.placeholder
           return n._isMounted
             ? f
-            : (n.$once('hook:mounted', function() {
+            : (n.$once('hook:mounted', function () {
                 n.$forceUpdate()
               }),
               o.placeholderTag && (o.placeholder || l)
@@ -3611,15 +3620,15 @@
                     o.placeholder || l
                   )
                 : f.length > 0
-                ? f.map(function() {
+                ? f.map(function () {
                     return t(!1)
                   })
                 : t(!1))
-        }
+        },
       }
       t.exports = r
     },
-    68: function(t, e, n) {
+    68: function (t, e, n) {
       'use strict'
       n(35),
         n(26),
@@ -3640,7 +3649,7 @@
         if (!n) {
           if (
             Array.isArray(t) ||
-            (n = (function(t, e) {
+            (n = (function (t, e) {
               if (!t) return
               if ('string' == typeof t) return c(t, e)
               var n = Object.prototype.toString.call(t).slice(8, -1)
@@ -3656,18 +3665,18 @@
           ) {
             n && (t = n)
             var i = 0,
-              r = function() {}
+              r = function () {}
             return {
               s: r,
-              n: function() {
+              n: function () {
                 return i >= t.length
                   ? { done: !0 }
                   : { done: !1, value: t[i++] }
               },
-              e: function(t) {
+              e: function (t) {
                 throw t
               },
-              f: r
+              f: r,
             }
           }
           throw new TypeError(
@@ -3678,23 +3687,23 @@
           f = !0,
           l = !1
         return {
-          s: function() {
+          s: function () {
             n = n.call(t)
           },
-          n: function() {
+          n: function () {
             var t = n.next()
             return (f = t.done), t
           },
-          e: function(t) {
+          e: function (t) {
             ;(l = !0), (o = t)
           },
-          f: function() {
+          f: function () {
             try {
               f || null == n.return || n.return()
             } finally {
               if (l) throw o
             }
-          }
+          },
         }
       }
       function c(t, e) {
@@ -3704,26 +3713,26 @@
       }
       var f =
           window.requestIdleCallback ||
-          function(t) {
+          function (t) {
             var e = Date.now()
-            return setTimeout(function() {
+            return setTimeout(function () {
               t({
                 didTimeout: !1,
-                timeRemaining: function() {
+                timeRemaining: function () {
                   return Math.max(0, 50 - (Date.now() - e))
-                }
+                },
               })
             }, 1)
           },
         l =
           window.cancelIdleCallback ||
-          function(t) {
+          function (t) {
             clearTimeout(t)
           },
         h =
           window.IntersectionObserver &&
-          new window.IntersectionObserver(function(t) {
-            t.forEach(function(t) {
+          new window.IntersectionObserver(function (t) {
+            t.forEach(function (t) {
               var e = t.intersectionRatio,
                 link = t.target
               e <= 0 || !link.__prefetch || link.__prefetch()
@@ -3734,57 +3743,57 @@
         extends: r.a.component('RouterLink'),
         props: {
           prefetch: { type: Boolean, default: !0 },
-          noPrefetch: { type: Boolean, default: !1 }
+          noPrefetch: { type: Boolean, default: !1 },
         },
-        mounted: function() {
+        mounted: function () {
           this.prefetch &&
             !this.noPrefetch &&
             (this.handleId = f(this.observe, { timeout: 2e3 }))
         },
-        beforeDestroy: function() {
+        beforeDestroy: function () {
           l(this.handleId),
             this.__observed &&
               (h.unobserve(this.$el), delete this.$el.__prefetch)
         },
         methods: {
-          observe: function() {
+          observe: function () {
             h &&
               this.shouldPrefetch() &&
               ((this.$el.__prefetch = this.prefetchLink.bind(this)),
               h.observe(this.$el),
               (this.__observed = !0))
           },
-          shouldPrefetch: function() {
+          shouldPrefetch: function () {
             var t = this.$router.resolve(this.to, this.$route, this.append)
             return t.resolved.matched
-              .map(function(t) {
+              .map(function (t) {
                 return t.components.default
               })
-              .filter(function(e) {
+              .filter(function (e) {
                 return (
                   t.href ||
                   ('function' == typeof e && !e.options && !e.__prefetched)
                 )
               }).length
           },
-          canPrefetch: function() {
+          canPrefetch: function () {
             var t = navigator.connection
             return !(
               this.$nuxt.isOffline ||
               (t && ((t.effectiveType || '').includes('2g') || t.saveData))
             )
           },
-          getPrefetchComponents: function() {
+          getPrefetchComponents: function () {
             return this.$router
               .resolve(this.to, this.$route, this.append)
-              .resolved.matched.map(function(t) {
+              .resolved.matched.map(function (t) {
                 return t.components.default
               })
-              .filter(function(t) {
+              .filter(function (t) {
                 return 'function' == typeof t && !t.options && !t.__prefetched
               })
           },
-          prefetchLink: function() {
+          prefetchLink: function () {
             if (this.canPrefetch()) {
               h.unobserve(this.$el)
               var t,
@@ -3793,7 +3802,7 @@
                 for (e.s(); !(t = e.n()).done; ) {
                   var n = t.value,
                     r = n()
-                  r instanceof Promise && r.catch(function() {}),
+                  r instanceof Promise && r.catch(function () {}),
                     (n.__prefetched = !0)
                 }
               } catch (t) {
@@ -3802,30 +3811,33 @@
                 e.f()
               }
               if (!this.$root.isPreview) {
-                var c = this.$router.resolve(this.to, this.$route, this.append)
-                  .href
+                var c = this.$router.resolve(
+                  this.to,
+                  this.$route,
+                  this.append
+                ).href
                 this.$nuxt &&
-                  this.$nuxt.fetchPayload(c, !0).catch(function() {})
+                  this.$nuxt.fetchPayload(c, !0).catch(function () {})
               }
             }
-          }
-        }
+          },
+        },
       }
     },
-    85: function(t, e, n) {
+    85: function (t, e, n) {
       'use strict'
       e.a = {}
     },
-    86: function(t, e, n) {
+    86: function (t, e, n) {
       'use strict'
       var r = {
         name: 'ClientOnly',
         functional: !0,
         props: {
           placeholder: String,
-          placeholderTag: { type: String, default: 'div' }
+          placeholderTag: { type: String, default: 'div' },
         },
-        render: function(t, e) {
+        render: function (t, e) {
           var n = e.parent,
             r = e.slots,
             o = e.props,
@@ -3835,7 +3847,7 @@
           var l = c.placeholder
           return n._isMounted
             ? f
-            : (n.$once('hook:mounted', function() {
+            : (n.$once('hook:mounted', function () {
                 n.$forceUpdate()
               }),
               o.placeholderTag && (o.placeholder || l)
@@ -3845,13 +3857,13 @@
                     o.placeholder || l
                   )
                 : f.length > 0
-                ? f.map(function() {
+                ? f.map(function () {
                     return t(!1)
                   })
                 : t(!1))
-        }
+        },
       }
       t.exports = r
-    }
-  }
+    },
+  },
 ])

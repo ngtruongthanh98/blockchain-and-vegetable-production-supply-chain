@@ -1,7 +1,7 @@
 {
-  "name": "ecg-portal",
+  "name": "veggiechain-portal",
   "version": "1.1.0",
-  "description": "ECG Portal",
+  "description": "VeggieChain Portal",
   "author": "ivan lori <ivan.lori@protonmail.com>",
   "scripts": {
     "dev": "nuxt",

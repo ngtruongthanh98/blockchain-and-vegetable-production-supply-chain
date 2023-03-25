@@ -9,26 +9,26 @@
       class="app-logo navbar-item flex items-center"
     >
       <h1 class="icon"></h1>
-      <span class="logo-title">ECG Portal</span>
+      <span class="logo-title">VeggieChain</span>
     </nuxt-link>
 
     <div class="flex items-center hospital-container">
       <nuxt-link
-        :to="{ name: 'analyze-ecg' }"
+        :to="{ name: 'product-cycle' }"
         class="analyse flex items-center"
         exact-active-class="is-active"
       >
-        <div class="icon-ecg"></div>
-        <span>Analyze ECG</span>
+        <div class="icon-product-cycle"></div>
+        <span>Product cycle</span>
       </nuxt-link>
 
       <nuxt-link
-        :to="{ name: 'about-ecg' }"
+        :to="{ name: 'about-us' }"
         class="about flex items-center"
         exact-active-class="is-active"
       >
-        <div class="icon-ecg"></div>
-        <span>About ECG</span>
+        <div class="icon-info"></div>
+        <span>About us</span>
       </nuxt-link>
     </div>
   </nav>
@@ -50,7 +50,7 @@ export default {
   padding: 16px;
 
   .icon {
-    background: url('../../static/heart-logo.png') no-repeat;
+    background: url('../../static/vegetable.png') no-repeat;
     background-position: 50% 50%;
     background-size: 40px;
     height: 40px;
@@ -69,8 +69,8 @@ export default {
     padding: 16px;
     height: 100%;
 
-    .icon-ecg {
-      background: url('../../static/ecg-icon.png') no-repeat;
+    .icon-product-cycle {
+      background: url('../../static/smart-contracts.png') no-repeat;
       background-position: 50% 50%;
       background-size: 40px;
 
@@ -93,7 +93,7 @@ export default {
     padding: 16px;
     height: 100%;
 
-    .icon-ecg {
+    .icon-info {
       background: url('../../static/info-icon.png') no-repeat;
       background-position: 50% 50%;
       background-size: 40px;
