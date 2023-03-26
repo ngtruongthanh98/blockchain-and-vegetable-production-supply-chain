@@ -1,42 +1,87 @@
-const hash = require("crypto-js/sha256");
+const sha256 = require("crypto-js/sha256");
 
 class Block {
-  constructor(prevHash, data) {
-    this.prevHash = prevHash;
+  constructor(index, timestamp, data, previousHash) {
+    this.index = index;
+    this.timestamp = timestamp;
     this.data = data;
-    this.timeStamp = new Date();
 
+    this.previousHash = previousHash;
     this.hash = this.calculateHash();
+
+    this.mineVar = 0;
   }
 
   calculateHash() {
-    return hash(
-      this.prevHash + JSON.stringify(this.data) + this.timeStamp
+    return sha256(
+      this.index +
+        this.timestamp +
+        JSON.stringify(this.data) +
+        this.previousHash +
+        this.mineVar
     ).toString();
+  }
+
+  mine(difficulty) {
+    while (!this.hash.startsWith("0".repeat(difficulty))) {
+      this.mineVar++;
+      this.hash = this.calculateHash();
+    }
   }
 }
 
 class Blockchain {
-  constructor() {
-    const genesisBlock = new Block("0000", { isGenesis: true });
-
-    this.chain = [genesisBlock];
+  constructor(difficulty) {
+    this.difficulty = difficulty;
+    this.chain = [this.createGenesisBlock()];
   }
 
-  getLastBlock() {
+  createGenesisBlock() {
+    return new Block(0, new Date(), "Genesis block", "0");
+  }
+
+  getLatestBlock() {
     return this.chain[this.chain.length - 1];
   }
 
   addBlock(data) {
-    const lastBlock = this.getLastBlock();
-    const newBlock = new Block(lastBlock.hash, data);
+    const lastBlock = this.getLatestBlock();
+    const newBlock = new Block(
+      lastBlock.index + 1,
+      new Date(),
+      data,
+      lastBlock.hash
+    );
+
+    console.log("start mining");
+    console.time("mine");
+    newBlock.mine(this.difficulty);
+    console.timeEnd("mine");
+    console.log("end mining", newBlock);
 
     this.chain.push(newBlock);
   }
+
+  isChainValid() {
+    for (let i = 1; i < this.chain.length; i++) {
+      const currentBlock = this.chain[i];
+      const previousBlock = this.chain[i - 1];
+
+      if (currentBlock.hash !== currentBlock.calculateHash()) {
+        return false;
+      }
+
+      if (currentBlock.previousHash !== previousBlock.hash) {
+        return false;
+      }
+    }
+
+    return true;
+  }
 }
 
-// ! Test
-const veggiechain = new Blockchain();
+// Test
+const veggiechain = new Blockchain(5);
 console.log(veggiechain);
 
 veggiechain.addBlock({
@@ -54,3 +99,5 @@ veggiechain.addBlock({
 });
 
 console.log(veggiechain.chain);
+
+console.log("chain valid: ", veggiechain.isChainValid());
