@@ -1,6 +1,11 @@
 <template>
   <div class="subheader-wrapper m-4 p-4 text-center">
-    <!-- <ecg-viewer /> -->
+    <img
+      src="@/static/images/vegetables.jpeg"
+      alt="vegetables image"
+      width="700px"
+      class="vegetables-image"
+    />
   </div>
 </template>
 
@@ -24,5 +29,6 @@ export default {
 
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 </style>

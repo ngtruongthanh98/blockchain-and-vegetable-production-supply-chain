@@ -2,9 +2,7 @@
   <div class="hero-wrapper">
     <h1 class="text-white text-4xl mb-5">VeggieChain</h1>
     <h2 class="text-white text-2xl">
-      Using swarm learning to analyze and predict heart issues
-      <br />
-      Providing real-time evaluations with collaborating hospitals
+      The blockchain solution for vegetable supply chain.
     </h2>
   </div>
 </template>
