@@ -1,7 +1,5 @@
 <template>
   <div class="products-page">
-    <b>Products</b>
-
     <GeneralInfo />
   </div>
 </template>
