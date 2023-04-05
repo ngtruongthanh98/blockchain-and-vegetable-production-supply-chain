@@ -60,8 +60,14 @@ export default {
   .product-cycle-container {
     margin-top: 24px;
 
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+
+    .stage-container {
+      padding: 16px;
+    }
   }
 }
 </style>
