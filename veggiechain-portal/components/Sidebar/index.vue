@@ -2,12 +2,12 @@
   <div class="sidebar">
     <div class="sidebar__container">
       <nuxt-link
-        :to="{ name: 'product-cycle' }"
+        :to="{ name: 'products' }"
         class="analyse flex items-center"
         exact-active-class="is-active"
       >
         <div class="icon-product-cycle"></div>
-        <span>Product cycle</span>
+        <span>Products</span>
       </nuxt-link>
 
       <nuxt-link
