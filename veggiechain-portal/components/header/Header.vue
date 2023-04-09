@@ -12,10 +12,70 @@
       <span class="logo-title">VeggieChain</span>
     </nuxt-link>
 
-    <div class="flex items-center hospital-container">
+    <div class="flex items-center item-container">
+      <nuxt-link
+        v-if="userRole === 'farmer'"
+        :to="{ name: 'farmer' }"
+        class="product-element flex items-center"
+        exact-active-class="is-active"
+      >
+        <div class="icon-farmer"></div>
+        <span>Farmer</span>
+      </nuxt-link>
+
+      <nuxt-link
+        v-if="userRole === 'distributor'"
+        :to="{ name: 'distributor' }"
+        class="product-element flex items-center"
+        exact-active-class="is-active"
+      >
+        <div class="icon-distributor"></div>
+        <span>Distributor</span>
+      </nuxt-link>
+
+      <nuxt-link
+        v-if="userRole === 'factory'"
+        :to="{ name: 'factory' }"
+        class="product-element flex items-center"
+        exact-active-class="is-active"
+      >
+        <div class="icon-factory"></div>
+        <span>Factory</span>
+      </nuxt-link>
+
+      <nuxt-link
+        v-if="userRole === 'factory'"
+        :to="{ name: 'factory' }"
+        class="product-element flex items-center"
+        exact-active-class="is-active"
+      >
+        <div class="icon-factory"></div>
+        <span>Factory</span>
+      </nuxt-link>
+
+      <nuxt-link
+        v-if="userRole === 'retailer'"
+        :to="{ name: 'retailer' }"
+        class="product-element flex items-center"
+        exact-active-class="is-active"
+      >
+        <div class="icon-retailer"></div>
+        <span>Retailer</span>
+      </nuxt-link>
+
+      <nuxt-link
+        v-if="userRole === 'customer'"
+        :to="{ name: 'customer' }"
+        class="product-element flex items-center"
+        exact-active-class="is-active"
+      >
+        <div class="icon-customer"></div>
+        <span>Customer</span>
+      </nuxt-link>
+
       <nuxt-link
         :to="{ name: 'products' }"
-        class="analyse flex items-center"
+        class="product-element flex items-center"
         exact-active-class="is-active"
       >
         <div class="icon-product-cycle"></div>
@@ -38,6 +98,11 @@
 <script>
 export default {
   name: 'VmHeader',
+  computed: {
+    userRole() {
+      return this.$store.getters.getUserRole
+    },
+  },
 }
 </script>
 
@@ -64,13 +129,63 @@ export default {
   }
 }
 
-.hospital-container {
-  .analyse {
+.item-container {
+  .product-element {
     padding: 16px;
     height: 100%;
 
     .icon-product-cycle {
       background: url('../../static/smart-contracts.png') no-repeat;
+      background-position: 50% 50%;
+      background-size: 40px;
+
+      width: 40px;
+      height: 40px;
+      margin-right: 5px;
+    }
+
+    .icon-farmer {
+      background: url('../../static/svg/farmer.svg') no-repeat;
+      background-position: 50% 50%;
+      background-size: 40px;
+
+      width: 40px;
+      height: 40px;
+      margin-right: 5px;
+    }
+
+    .icon-distributor {
+      background: url('../../static/distributor.png') no-repeat;
+      background-position: 50% 50%;
+      background-size: 40px;
+
+      width: 40px;
+      height: 40px;
+      margin-right: 5px;
+    }
+
+    .icon-factory {
+      background: url('../../static/factory.png') no-repeat;
+      background-position: 50% 50%;
+      background-size: 40px;
+
+      width: 40px;
+      height: 40px;
+      margin-right: 5px;
+    }
+
+    .icon-retailer {
+      background: url('../../static/retailer.png') no-repeat;
+      background-position: 50% 50%;
+      background-size: 40px;
+
+      width: 40px;
+      height: 40px;
+      margin-right: 5px;
+    }
+
+    .icon-customer {
+      background: url('../../static/customer.png') no-repeat;
       background-position: 50% 50%;
       background-size: 40px;
 

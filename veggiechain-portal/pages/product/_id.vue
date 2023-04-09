@@ -52,6 +52,8 @@ export default {
 
   mounted() {
     this.productId = this.$route.params.id
+    this.productImageUrl = this.$route.params.imageUrl
+    this.productName = this.$route.params.productName
   },
   methods: {
     handleBlockChanged(newBlock) {
