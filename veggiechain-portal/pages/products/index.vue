@@ -28,12 +28,22 @@
         </div>
       </nuxt-link>
     </div>
+
+    <button
+      v-show="showScrollButton"
+      @click="scrollToTop"
+      class="scroll-to-top"
+    >
+      Scroll to Top
+    </button>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
+      showScrollButton: false,
+
       products: [
         {
           id: 'carrot7162gshqks',
@@ -217,6 +227,31 @@ export default {
       return this.products.sort((a, b) => a.name.localeCompare(b.name))
     },
   },
+  methods: {
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      })
+    },
+    handleScroll() {
+      if (window.pageYOffset > 50) {
+        this.showScrollButton = true
+      } else {
+        this.showScrollButton = false
+      }
+    },
+  },
+  created() {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', this.handleScroll)
+    }
+  },
+  destroyed() {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -278,6 +313,26 @@ export default {
       font-size: 14px;
       color: #666;
     }
+  }
+
+  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .scroll-to-top:hover {
+    background-color: #555;
+  }
+
+  .scroll-to-top.show {
+    display: block;
   }
 }
 </style>
