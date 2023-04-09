@@ -115,6 +115,7 @@ export const state = () => ({
     hasSearched: false,
     name: '',
     productTitleSearched: '',
+    role: 'farmer',
   },
   systemInfo: {
     openLoginModal: false,
@@ -179,6 +180,9 @@ export const getters = {
   getUserName: (state) => {
     return state.userInfo.name
   },
+  getUserRole: (state) => {
+    return state.userInfo.role
+  },
   isLoginModalOpen: (state) => {
     return state.systemInfo.openLoginModal
   },
@@ -237,6 +241,9 @@ export const mutations = {
   },
   setUserName: (state, name) => {
     state.userInfo.name = name
+  },
+  setUserRole: (state, role) => {
+    state.userInfo.role = role
   },
   setProductTitleSearched: (state, titleSearched) => {
     state.userInfo.productTitleSearched = titleSearched
