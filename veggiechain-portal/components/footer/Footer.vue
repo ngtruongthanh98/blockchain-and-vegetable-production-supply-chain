@@ -49,7 +49,7 @@ export default {
   justify-content: space-between;
   padding: 0 32px;
 
-  color: $white-color;
+  color: $black-color;
   position: relative;
   z-index: 99;
 }
