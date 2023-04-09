@@ -1,9 +1,20 @@
 <template>
   <div class="products-page">
-    <div>Vegetable Products</div>
-    <div v-for="product in sortedProducts" :key="product.id">
+    <div class="title">Vegetable Products</div>
+    <div
+      class="product-item"
+      v-for="product in sortedProducts"
+      :key="product.id"
+    >
       <nuxt-link
-        :to="{ name: 'product-id', params: { id: product.id } }"
+        :to="{
+          name: 'product-id',
+          params: {
+            id: product.id,
+            imageUrl: product.image,
+            productName: product.name,
+          },
+        }"
         class="product-link flex items-center"
         exact-active-class="is-active"
       >
@@ -29,7 +40,7 @@ export default {
           name: 'Carrot',
           description: 'Fresh organic carrots',
           image:
-            'https://www.plantsofdistinction.co.uk/stock/mweb/img003063.jpg',
+            'https://cf.organicbazar.net/wp-content/uploads/2021/06/Untitled-design-44.jpg',
         },
         {
           id: 'tomato2378ghdks',
@@ -78,7 +89,7 @@ export default {
           name: 'Bell Pepper',
           description: 'Colorful and flavorful bell peppers',
           image:
-            'https://www.chilipeppermadness.com/wp-content/uploads/2019/08/Bell-Peppers.jpg',
+            'https://www.gomarket.com.ng/wp-content/uploads/2020/05/bellp.jpg',
         },
         {
           id: 'cauliflower3168dkls',
@@ -211,48 +222,62 @@ export default {
 <style lang="scss" scoped>
 .products-page {
   min-height: calc(100vh - 72px - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .title {
     font-size: 24px;
+    margin-top: 24px;
     margin-bottom: 20px;
     color: #333;
+
+    text-align: center;
   }
 
-  .product-link {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
+  .product-item {
+    width: 50vw;
 
-    &:hover,
-    &.is-active {
-      background-color: #f5f5f5;
+    & + .product-item {
+      margin-top: 16px;
     }
-  }
 
-  .product-image {
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    background-position: center;
-    margin-right: 20px;
-  }
+    .product-link {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: background-color 0.2s ease;
 
-  .product-info {
-    flex-grow: 1;
-  }
+      &:hover,
+      &.is-active {
+        background-color: #f5f5f5;
+      }
+    }
 
-  .product-name {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
-  }
+    .product-image {
+      width: 100px;
+      height: 100px;
+      background-size: cover;
+      background-position: center;
+      margin-right: 20px;
+    }
 
-  .product-description {
-    font-size: 14px;
-    color: #666;
+    .product-info {
+      flex-grow: 1;
+    }
+
+    .product-name {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .product-description {
+      font-size: 14px;
+      color: #666;
+    }
   }
 }
 </style>

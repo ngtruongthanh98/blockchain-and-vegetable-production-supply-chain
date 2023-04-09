@@ -11,7 +11,12 @@
     </div>
 
     <el-card class="image-card">
-      <img :src="productImageUrl" alt="Product image" width="400px" />
+      <img
+        :src="productImageUrl"
+        alt="Product image"
+        width="400px"
+        height="400px"
+      />
     </el-card>
   </div>
 </template>
@@ -69,6 +74,8 @@ export default {
 
   .image-card {
     margin-top: 24px;
+    width: 400px;
+    height: 400px;
   }
 }
 </style>
