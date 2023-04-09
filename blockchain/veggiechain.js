@@ -81,7 +81,7 @@ class Blockchain {
 }
 
 // Test
-const veggiechain = new Blockchain(5);
+const veggiechain = new Blockchain(3);
 console.log(veggiechain);
 
 veggiechain.addBlock({
