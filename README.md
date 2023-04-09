@@ -4,5 +4,5 @@ This project explores the use of blockchain technology in vegetable production s
 
 ## Technologies Used
 
-- Frontend: React Native and TypeScript.
+- Frontend: NuxtJS
 - Blockchain technology
