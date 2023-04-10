@@ -6,16 +6,8 @@
       v-for="product in sortedProducts"
       :key="product.id"
     >
-      <nuxt-link
-        :to="{
-          name: 'product-id',
-          params: {
-            id: product.id,
-            imageUrl: product.image,
-            productName: product.name,
-          },
-        }"
-        class="product-link flex items-center"
+      <div
+        class="product-container flex items-center"
         exact-active-class="is-active"
       >
         <div
@@ -26,7 +18,19 @@
           <h2>{{ product.name }}</h2>
           <p>{{ product.description }}</p>
         </div>
-      </nuxt-link>
+        <nuxt-link
+          :to="{
+            name: 'product-id',
+            params: {
+              id: product.id,
+              imageUrl: product.image,
+              productName: product.name,
+            },
+          }"
+          class="view-btn"
+          >View transactions</nuxt-link
+        >
+      </div>
     </div>
 
     <button
@@ -277,7 +281,7 @@ export default {
       margin-top: 16px;
     }
 
-    .product-link {
+    .product-container {
       display: flex;
       align-items: center;
       padding: 20px;
@@ -287,7 +291,26 @@ export default {
 
       &:hover,
       &.is-active {
-        background-color: #f5f5f5;
+        background-color: $primary-third;
+      }
+
+      .view-btn {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 4px;
+        background-color: #4caf50;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+        margin-left: 16px;
+
+        &:hover {
+          background-color: #388e3c;
+        }
       }
     }
 

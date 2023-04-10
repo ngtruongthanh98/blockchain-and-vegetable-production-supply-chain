@@ -1,5 +1,17 @@
 <template>
   <div class="product-cycle-page">
+    <div class="title-row">
+      <div class="title">Product cycle</div>
+      <nuxt-link
+        :to="{
+          name: 'products',
+        }"
+        class="back-button"
+      >
+        See all products
+      </nuxt-link>
+    </div>
+
     <div class="row-container">
       <GeneralInfo
         class="general-info-box"
@@ -68,6 +80,48 @@ export default {
 <style lang="scss" scoped>
 .product-cycle-page {
   min-height: calc(100vh - 72px - 80px);
+
+  .title-row {
+    .title {
+      font-size: 24px;
+      margin-top: 24px;
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+    .back-button {
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: fit-content;
+      height: 48px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+
+      margin: 16px;
+
+      &:hover {
+        background-color: #555;
+      }
+
+      .icon-back {
+        background: url('../../static/svg/left-arrow.svg') no-repeat;
+        background-position: 50% 50%;
+        background-size: 36px;
+
+        width: 60px;
+        height: 60px;
+        background-color: red;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+    }
+  }
 
   .row-container {
     display: flex;
