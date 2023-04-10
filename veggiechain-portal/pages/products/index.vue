@@ -264,6 +264,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 48px;
 
   .title {
     font-size: 24px;
