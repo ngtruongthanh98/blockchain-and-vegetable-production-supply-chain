@@ -129,7 +129,7 @@ export default {
   order: 1;
 
   &.active {
-    background-color: lightblue;
+    background-color: $primary-third;
   }
 
   .block-title {
@@ -141,7 +141,7 @@ export default {
   order: 2;
 
   &.active {
-    background-color: lightblue;
+    background-color: $primary-third;
   }
 
   .block-title {
@@ -162,7 +162,7 @@ export default {
   order: 3;
 
   &.active {
-    background-color: lightblue;
+    background-color: $primary-third;
   }
 
   .block-title {
@@ -183,7 +183,7 @@ export default {
   order: 4;
 
   &.active {
-    background-color: lightblue;
+    background-color: $primary-third;
   }
 
   .block-title {
@@ -204,7 +204,7 @@ export default {
   order: 5;
 
   &.active {
-    background-color: lightblue;
+    background-color: $primary-third;
   }
 
   .block-title {
