@@ -14,7 +14,6 @@
 
     <div class="flex items-center item-container">
       <nuxt-link
-        v-if="userRole === 'farmer'"
         :to="{ name: 'farmer' }"
         class="product-element flex items-center"
         exact-active-class="is-active"
@@ -24,7 +23,6 @@
       </nuxt-link>
 
       <nuxt-link
-        v-if="userRole === 'distributor'"
         :to="{ name: 'distributor' }"
         class="product-element flex items-center"
         exact-active-class="is-active"
@@ -34,7 +32,6 @@
       </nuxt-link>
 
       <nuxt-link
-        v-if="userRole === 'factory'"
         :to="{ name: 'factory' }"
         class="product-element flex items-center"
         exact-active-class="is-active"
@@ -44,17 +41,6 @@
       </nuxt-link>
 
       <nuxt-link
-        v-if="userRole === 'factory'"
-        :to="{ name: 'factory' }"
-        class="product-element flex items-center"
-        exact-active-class="is-active"
-      >
-        <div class="icon-factory"></div>
-        <span>Factory</span>
-      </nuxt-link>
-
-      <nuxt-link
-        v-if="userRole === 'retailer'"
         :to="{ name: 'retailer' }"
         class="product-element flex items-center"
         exact-active-class="is-active"
@@ -64,7 +50,6 @@
       </nuxt-link>
 
       <nuxt-link
-        v-if="userRole === 'customer'"
         :to="{ name: 'customer' }"
         class="product-element flex items-center"
         exact-active-class="is-active"

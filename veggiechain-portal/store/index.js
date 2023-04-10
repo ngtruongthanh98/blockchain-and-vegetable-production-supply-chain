@@ -115,7 +115,7 @@ export const state = () => ({
     hasSearched: false,
     name: '',
     productTitleSearched: '',
-    role: 'farmer',
+    role: 'customer',
   },
   systemInfo: {
     openLoginModal: false,
