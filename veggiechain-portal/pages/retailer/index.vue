@@ -18,14 +18,19 @@
         <el-form-item label="Location">
           <el-input v-model="formData.location"></el-input>
         </el-form-item>
-        <el-form-item label="Contact Name">
-          <el-input v-model="formData.contactName"></el-input>
-        </el-form-item>
-        <el-form-item label="Contact Email">
-          <el-input v-model="formData.contactEmail"></el-input>
-        </el-form-item>
-        <el-form-item label="Contact Phone">
-          <el-input v-model="formData.contactPhone"></el-input>
+        <el-form-item label="Contact Information">
+          <el-input
+            v-model="formData.contactName"
+            placeholder="Name"
+          ></el-input>
+          <el-input
+            v-model="formData.contactEmail"
+            placeholder="Email"
+          ></el-input>
+          <el-input
+            v-model="formData.contactPhone"
+            placeholder="Phone"
+          ></el-input>
         </el-form-item>
         <el-form-item label="Date of Receipt">
           <el-date-picker

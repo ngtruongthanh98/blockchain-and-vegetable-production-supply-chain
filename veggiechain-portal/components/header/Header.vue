@@ -17,6 +17,7 @@
         :to="{ name: 'farmer' }"
         class="product-element flex items-center"
         exact-active-class="is-active"
+        v-if="isUserLogged && userRole === 'farmer'"
       >
         <div class="icon-farmer"></div>
         <span>Farmer</span>
@@ -26,6 +27,7 @@
         :to="{ name: 'distributor' }"
         class="product-element flex items-center"
         exact-active-class="is-active"
+        v-if="isUserLogged && userRole === 'distributor'"
       >
         <div class="icon-distributor"></div>
         <span>Distributor</span>
@@ -35,6 +37,7 @@
         :to="{ name: 'factory' }"
         class="product-element flex items-center"
         exact-active-class="is-active"
+        v-if="isUserLogged && userRole === 'factory'"
       >
         <div class="icon-factory"></div>
         <span>Factory</span>
@@ -44,6 +47,7 @@
         :to="{ name: 'retailer' }"
         class="product-element flex items-center"
         exact-active-class="is-active"
+        v-if="isUserLogged && userRole === 'retailer'"
       >
         <div class="icon-retailer"></div>
         <span>Retailer</span>
@@ -53,6 +57,7 @@
         :to="{ name: 'customer' }"
         class="product-element flex items-center"
         exact-active-class="is-active"
+        v-if="isUserLogged && userRole === 'customer'"
       >
         <div class="icon-customer"></div>
         <span>Customer</span>
@@ -66,16 +71,15 @@
         <div class="icon-product-cycle"></div>
         <span>Products</span>
       </nuxt-link>
-
-      <nuxt-link
-        :to="{ name: 'about-us' }"
-        class="about flex items-center"
-        exact-active-class="is-active"
-      >
-        <div class="icon-info"></div>
-        <span>About us</span>
-      </nuxt-link>
     </div>
+
+    <a
+      href="#"
+      class="login-btn flex items-center"
+      @click.prevent="onHandleLogin"
+    >
+      <span>{{ isUserLogged ? 'Logout' : 'Login' }}</span>
+    </a>
   </nav>
 </template>
 
@@ -84,8 +88,23 @@
 export default {
   name: 'VmHeader',
   computed: {
+    isUserLogged() {
+      return this.$store.state.userInfo.isLoggedIn
+    },
     userRole() {
       return this.$store.getters.getUserRole
+    },
+  },
+  methods: {
+    onHandleLogin() {
+      if (this.isUserLogged) {
+        this.$store.commit('isUserLoggedIn', false)
+        this.$router.push('/')
+      } else {
+        this.$store.commit('isUserLoggedIn', true)
+      }
+
+      console.log('button clicked')
     },
   },
 }
@@ -94,6 +113,7 @@ export default {
 <style lang="scss" scoped>
 .custom-navbar {
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  align-items: center;
 }
 
 .app-logo {
@@ -188,29 +208,20 @@ export default {
       background-color: $primary-secondary;
     }
   }
+}
 
-  .about {
-    padding: 16px;
-    height: 100%;
+.login-btn {
+  background-color: #89cff0;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+  margin-right: 16px;
+}
 
-    .icon-info {
-      background: url('../../static/info-icon.png') no-repeat;
-      background-position: 50% 50%;
-      background-size: 40px;
-
-      width: 40px;
-      height: 40px;
-      margin-right: 5px;
-    }
-
-    &:hover {
-      cursor: pointer;
-      background-color: $primary-third;
-    }
-
-    &.is-active {
-      background-color: $primary-secondary;
-    }
-  }
+.login-btn:hover {
+  background-color: #9acffa;
 }
 </style>

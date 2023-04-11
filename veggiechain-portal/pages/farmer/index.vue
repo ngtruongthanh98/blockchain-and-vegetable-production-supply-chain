@@ -18,13 +18,8 @@
         <el-form-item label="Farmer/Owner Information">
           <el-input v-model="formData.farmerOwnerInfo"></el-input>
         </el-form-item>
-        <el-form-item label="Vegetable Type(s)">
-          <el-select v-model="formData.vegetableType" multiple>
-            <el-option label="Tomatoes" value="Tomatoes"></el-option>
-            <el-option label="Peppers" value="Peppers"></el-option>
-            <el-option label="Cucumbers" value="Cucumbers"></el-option>
-            <el-option label="Eggplants" value="Eggplants"></el-option>
-          </el-select>
+        <el-form-item label="Vegetable Type">
+          <el-input v-model="formData.vegetableType"></el-input>
         </el-form-item>
         <el-form-item label="Planting and Harvest Dates">
           <el-date-picker
@@ -38,8 +33,14 @@
             placeholder="Harvest Date"
           ></el-date-picker>
         </el-form-item>
-        <el-form-item label="Pesticide and Herbicide Use">
-          <el-radio-group v-model="formData.pesticideHerbicideUse">
+        <el-form-item label="Pesticide Use">
+          <el-radio-group v-model="formData.pesticideUse">
+            <el-radio label="Yes"></el-radio>
+            <el-radio label="No"></el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item label="Herbicide Use">
+          <el-radio-group v-model="formData.herbicideUse">
             <el-radio label="Yes"></el-radio>
             <el-radio label="No"></el-radio>
           </el-radio-group>
@@ -68,10 +69,11 @@ export default {
         farmName: '',
         location: '',
         farmerOwnerInfo: '',
-        vegetableType: [],
+        vegetableType: '',
         plantingDate: '',
         harvestDate: '',
-        pesticideHerbicideUse: '',
+        pesticideUse: '',
+        herbicideUse: '',
         certificationStatus: '',
       },
     }
