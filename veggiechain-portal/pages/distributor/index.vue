@@ -71,7 +71,15 @@ export default {
       // submit data to server or store in local storage
     },
     resetForm() {
-      this.$refs.form.resetFields()
+      this.formData.previousHash = ''
+      this.formData.companyName = ''
+      this.formData.location = ''
+      this.formData.contactName = ''
+      this.formData.contactEmail = ''
+      this.formData.contactPhone = ''
+      this.formData.pickupDate = ''
+      this.formData.transportation = ''
+      this.formData.qualityControlInfo = ''
     },
   },
 }

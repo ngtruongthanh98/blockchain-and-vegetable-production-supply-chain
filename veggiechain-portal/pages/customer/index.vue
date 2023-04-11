@@ -60,7 +60,12 @@ export default {
       // submit data to server or store in local storage
     },
     resetForm() {
-      this.$refs.form.resetFields()
+      this.formData.previousHash = ''
+      this.formData.purchaseDate = ''
+      this.formData.storeLocation = ''
+      this.formData.vegetableType = ''
+      this.formData.price = ''
+      this.formData.feedback = ''
     },
   },
 }
