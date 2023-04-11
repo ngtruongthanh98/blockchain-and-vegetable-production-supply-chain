@@ -101,7 +101,7 @@ export default {
         this.$store.commit('isUserLoggedIn', false)
         this.$router.push('/')
       } else {
-        this.$store.commit('isUserLoggedIn', true)
+        this.$router.push('/login')
       }
 
       console.log('button clicked')
