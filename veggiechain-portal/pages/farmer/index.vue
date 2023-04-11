@@ -84,7 +84,15 @@ export default {
       // submit data to server or store in local storage
     },
     resetForm() {
-      this.$refs.form.resetFields()
+      this.formData.farmName = ''
+      this.formData.location = ''
+      this.formData.farmerOwnerInfo = ''
+      this.formData.vegetableType = ''
+      this.formData.plantingDate = ''
+      this.formData.harvestDate = ''
+      this.formData.pesticideUse = ''
+      this.formData.herbicideUse = ''
+      this.formData.certificationStatus = ''
     },
   },
 }
