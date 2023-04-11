@@ -36,8 +36,8 @@
         <el-form-item label="Transportation Information">
           <el-input v-model="formData.transportation"></el-input>
         </el-form-item>
-        <el-form-item label="Inspection and Quality Control Information">
-          <el-input v-model="formData.inspection"></el-input>
+        <el-form-item label="Quality Control Information">
+          <el-input v-model="formData.qualityControlInfo"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="submitForm">Submit</el-button>
@@ -61,7 +61,7 @@ export default {
         contactPhone: '',
         pickupDate: '',
         transportation: '',
-        inspection: '',
+        qualityControlInfo: '',
       },
     }
   },

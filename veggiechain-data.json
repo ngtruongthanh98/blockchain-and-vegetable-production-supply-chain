@@ -1,0 +1,61 @@
+{
+  "farmerData": {
+    "farmerName": "",
+    "location": "",
+    "farmerInfomation": "",
+    "vegetableType": "",
+    "plantingDate": "",
+    "harvestDate": "",
+    "isUsedPesticide": null,
+    "isUsedHerbicide": null,
+    "certificationStatus": ""
+  },
+  "distributorData": {
+    "previousBlockHash": "",
+    "companyName": "",
+    "location": "",
+    "contactInformation": {
+      "name": "",
+      "email": "",
+      "phone": ""
+    },
+    "dateOfPick": "",
+    "transportationInformation": "",
+    "qualityControlInformation": ""
+  },
+  "factory": {
+    "previousBlockHash": "",
+    "processingFacilityName": "",
+    "location": "",
+    "contactInformation": {
+      "name": "",
+      "email": "",
+      "phone": ""
+    },
+    "processingDate": "",
+    "typeOfProcessing": "",
+    "qualityControlInformation": ""
+  },
+  "retailer": {
+    "previousBlockHash": "",
+    "storeName": "",
+    "location": "",
+    "contactInformation": {
+      "name": "",
+      "email": "",
+      "phone": ""
+    },
+    "dateOfReceipt": "",
+    "storageConditions": "",
+    "salePrice": "",
+    "promotions": ""
+  },
+  "customer": {
+    "previousBlockHash": "",
+    "purchaseDate": "",
+    "storeLocation": "",
+    "vegetableType": "",
+    "price": "",
+    "feedback": ""
+  }
+}

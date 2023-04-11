@@ -23,12 +23,7 @@
           <el-input v-model="formData.storeLocation"></el-input>
         </el-form-item>
         <el-form-item label="Vegetable Type">
-          <el-select v-model="formData.vegetableType">
-            <el-option label="Tomatoes" value="Tomatoes"></el-option>
-            <el-option label="Peppers" value="Peppers"></el-option>
-            <el-option label="Cucumbers" value="Cucumbers"></el-option>
-            <el-option label="Eggplants" value="Eggplants"></el-option>
-          </el-select>
+          <el-input v-model="formData.vegetableType"></el-input>
         </el-form-item>
         <el-form-item label="Price">
           <el-input v-model="formData.price"></el-input>
