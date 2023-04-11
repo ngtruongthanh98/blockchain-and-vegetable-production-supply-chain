@@ -1,49 +1,50 @@
 <template>
   <div class="distributor-page">
-    <div class="title">Distributor Information</div>
-    <el-form
-      ref="form"
-      :model="formData"
-      label-width="120px"
-      style="max-width: 600px"
-    >
-      <el-form-item label="Previous hash">
-        <el-input v-model="formData.previousHash"></el-input>
-      </el-form-item>
-      <el-form-item label="Company Name">
-        <el-input v-model="formData.companyName"></el-input>
-      </el-form-item>
-      <el-form-item label="Location">
-        <el-input v-model="formData.location"></el-input>
-      </el-form-item>
-      <el-form-item label="Contact Information">
-        <el-input v-model="formData.contactName" placeholder="Name"></el-input>
-        <el-input
-          v-model="formData.contactEmail"
-          placeholder="Email"
-        ></el-input>
-        <el-input
-          v-model="formData.contactPhone"
-          placeholder="Phone"
-        ></el-input>
-      </el-form-item>
-      <el-form-item label="Date of Pickup">
-        <el-date-picker
-          type="date"
-          v-model="formData.pickupDate"
-        ></el-date-picker>
-      </el-form-item>
-      <el-form-item label="Transportation Information">
-        <el-input v-model="formData.transportation"></el-input>
-      </el-form-item>
-      <el-form-item label="Inspection and Quality Control Information">
-        <el-input v-model="formData.inspection"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="submitForm">Submit</el-button>
-        <el-button @click="resetForm">Reset</el-button>
-      </el-form-item>
-    </el-form>
+    <el-card class="card-container">
+      <div class="title">Distributor Information</div>
+
+      <el-form ref="form" :model="formData" style="max-width: 600px">
+        <el-form-item label="Previous block hash">
+          <el-input v-model="formData.previousHash"></el-input>
+        </el-form-item>
+        <el-form-item label="Company Name">
+          <el-input v-model="formData.companyName"></el-input>
+        </el-form-item>
+        <el-form-item label="Location">
+          <el-input v-model="formData.location"></el-input>
+        </el-form-item>
+        <el-form-item label="Contact Information">
+          <el-input
+            v-model="formData.contactName"
+            placeholder="Name"
+          ></el-input>
+          <el-input
+            v-model="formData.contactEmail"
+            placeholder="Email"
+          ></el-input>
+          <el-input
+            v-model="formData.contactPhone"
+            placeholder="Phone"
+          ></el-input>
+        </el-form-item>
+        <el-form-item label="Date of Pickup">
+          <el-date-picker
+            type="date"
+            v-model="formData.pickupDate"
+          ></el-date-picker>
+        </el-form-item>
+        <el-form-item label="Transportation Information">
+          <el-input v-model="formData.transportation"></el-input>
+        </el-form-item>
+        <el-form-item label="Inspection and Quality Control Information">
+          <el-input v-model="formData.inspection"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="submitForm">Submit</el-button>
+          <el-button @click="resetForm">Reset</el-button>
+        </el-form-item>
+      </el-form>
+    </el-card>
   </div>
 </template>
 
@@ -95,6 +96,10 @@ export default {
     margin-top: 20px;
     width: 50vw;
 
+    .el-form-item {
+      margin-bottom: unset;
+    }
+
     .el-form-item__label {
       font-weight: bold;
       color: #333;
@@ -118,6 +123,11 @@ export default {
       margin-top: 20px;
       margin-right: 16px;
     }
+  }
+
+  .card-container {
+    margin-top: 48px;
+    margin-bottom: 48px;
   }
 }
 </style>
