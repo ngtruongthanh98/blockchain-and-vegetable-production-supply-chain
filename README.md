@@ -18,3 +18,11 @@ Build and deploy contracts:
   - cd blockchain 
   - truffle compile
   - truffle migrate (or truffle migrate --reset)
+  
+  
+  
+  Frontend:
+  - cd veggiechain-portal
+  - yarn
+  - yarn dev
+  - Go to localhost:3000
