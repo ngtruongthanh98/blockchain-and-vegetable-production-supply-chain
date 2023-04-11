@@ -1,61 +1,62 @@
 <template>
   <div class="farmer-page">
-    <div class="title">Farmer Information</div>
+    <el-card class="card-container">
+      <div class="title">Farmer Information</div>
 
-    <el-form
-      ref="form"
-      :model="formData"
-      label-width="120px"
-      class="form"
-      style="max-width: 600px"
-    >
-      <el-form-item label="Farm Name">
-        <el-input v-model="formData.farmName"></el-input>
-      </el-form-item>
-      <el-form-item label="Location">
-        <el-input v-model="formData.location"></el-input>
-      </el-form-item>
-      <el-form-item label="Farmer/Owner Information">
-        <el-input v-model="formData.farmerOwnerInfo"></el-input>
-      </el-form-item>
-      <el-form-item label="Vegetable Type(s)">
-        <el-select v-model="formData.vegetableType" multiple>
-          <el-option label="Tomatoes" value="Tomatoes"></el-option>
-          <el-option label="Peppers" value="Peppers"></el-option>
-          <el-option label="Cucumbers" value="Cucumbers"></el-option>
-          <el-option label="Eggplants" value="Eggplants"></el-option>
-        </el-select>
-      </el-form-item>
-      <el-form-item label="Planting and Harvest Dates">
-        <el-date-picker
-          v-model="formData.plantingDate"
-          type="date"
-          placeholder="Planting Date"
-        ></el-date-picker>
-        <el-date-picker
-          v-model="formData.harvestDate"
-          type="date"
-          placeholder="Harvest Date"
-        ></el-date-picker>
-      </el-form-item>
-      <el-form-item label="Pesticide and Herbicide Use">
-        <el-radio-group v-model="formData.pesticideHerbicideUse">
-          <el-radio label="Yes"></el-radio>
-          <el-radio label="No"></el-radio>
-        </el-radio-group>
-      </el-form-item>
-      <el-form-item label="Certification Status">
-        <el-radio-group v-model="formData.certificationStatus">
-          <el-radio label="Certified Organic"></el-radio>
-          <el-radio label="Conventional"></el-radio>
-          <el-radio label="Transitional"></el-radio>
-        </el-radio-group>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="submitForm">Submit</el-button>
-        <el-button @click="resetForm">Reset</el-button>
-      </el-form-item>
-    </el-form>
+      <el-form
+        ref="form"
+        :model="formData"
+        class="form"
+        style="max-width: 600px"
+      >
+        <el-form-item label="Farm Name">
+          <el-input v-model="formData.farmName"></el-input>
+        </el-form-item>
+        <el-form-item label="Location">
+          <el-input v-model="formData.location"></el-input>
+        </el-form-item>
+        <el-form-item label="Farmer/Owner Information">
+          <el-input v-model="formData.farmerOwnerInfo"></el-input>
+        </el-form-item>
+        <el-form-item label="Vegetable Type(s)">
+          <el-select v-model="formData.vegetableType" multiple>
+            <el-option label="Tomatoes" value="Tomatoes"></el-option>
+            <el-option label="Peppers" value="Peppers"></el-option>
+            <el-option label="Cucumbers" value="Cucumbers"></el-option>
+            <el-option label="Eggplants" value="Eggplants"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="Planting and Harvest Dates">
+          <el-date-picker
+            v-model="formData.plantingDate"
+            type="date"
+            placeholder="Planting Date"
+          ></el-date-picker>
+          <el-date-picker
+            v-model="formData.harvestDate"
+            type="date"
+            placeholder="Harvest Date"
+          ></el-date-picker>
+        </el-form-item>
+        <el-form-item label="Pesticide and Herbicide Use">
+          <el-radio-group v-model="formData.pesticideHerbicideUse">
+            <el-radio label="Yes"></el-radio>
+            <el-radio label="No"></el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item label="Certification Status">
+          <el-radio-group v-model="formData.certificationStatus">
+            <el-radio label="Certified Organic"></el-radio>
+            <el-radio label="Conventional"></el-radio>
+            <el-radio label="Transitional"></el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="submitForm">Submit</el-button>
+          <el-button @click="resetForm">Reset</el-button>
+        </el-form-item>
+      </el-form>
+    </el-card>
   </div>
 </template>
 
@@ -106,6 +107,10 @@ export default {
     margin-top: 20px;
     width: 50vw;
 
+    .el-form-item {
+      margin-bottom: unset;
+    }
+
     .el-form-item__label {
       font-weight: bold;
       color: #333;
@@ -129,6 +134,11 @@ export default {
       margin-top: 20px;
       margin-right: 16px;
     }
+  }
+
+  .card-container {
+    margin-top: 48px;
+    margin-bottom: 48px;
   }
 }
 </style>
