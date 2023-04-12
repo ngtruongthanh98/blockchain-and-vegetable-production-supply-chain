@@ -9,6 +9,9 @@
         class="form"
         style="max-width: 600px"
       >
+        <el-form-item label="Next Destination (Factory)">
+          <el-input v-model="formData.nextDestination"></el-input>
+        </el-form-item>
         <el-form-item label="Farm Name">
           <el-input v-model="formData.farmName"></el-input>
         </el-form-item>
@@ -69,6 +72,7 @@ export default {
   data() {
     return {
       formData: {
+        nextDestination: '',
         farmName: '',
         location: '',
         farmerOwnerInfo: '',
@@ -88,6 +92,7 @@ export default {
       // submit data to server or store in local storage
     },
     resetForm() {
+      this.nextDestination = ''
       this.formData.farmName = ''
       this.formData.location = ''
       this.formData.farmerOwnerInfo = ''

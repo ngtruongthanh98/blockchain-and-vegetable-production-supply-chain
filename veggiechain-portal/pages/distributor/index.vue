@@ -4,8 +4,8 @@
       <div class="title">Distributor Information</div>
 
       <el-form ref="form" :model="formData" style="max-width: 600px">
-        <el-form-item label="Previous block hash">
-          <el-input v-model="formData.previousHash"></el-input>
+        <el-form-item label="Next Destination (Retailer)">
+          <el-input v-model="formData.nextDestination"></el-input>
         </el-form-item>
         <el-form-item label="Company Name">
           <el-input v-model="formData.companyName"></el-input>
@@ -53,7 +53,7 @@ export default {
   data() {
     return {
       formData: {
-        previousHash: '',
+        nextDestination: '',
         companyName: '',
         location: '',
         contactName: '',
@@ -71,7 +71,7 @@ export default {
       // submit data to server or store in local storage
     },
     resetForm() {
-      this.formData.previousHash = ''
+      this.formData.nextDestination = ''
       this.formData.companyName = ''
       this.formData.location = ''
       this.formData.contactName = ''

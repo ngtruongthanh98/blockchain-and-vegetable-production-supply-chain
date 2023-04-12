@@ -12,7 +12,7 @@
     "vegetableImage": ""
   },
   "factoryData": {
-    "previousBlockHash": "",
+    "nextDestination": "",
     "processingFacilityName": "",
     "location": "",
     "contactInformation": {
@@ -25,7 +25,7 @@
     "qualityControlInformation": ""
   },
   "distributorData": {
-    "previousBlockHash": "",
+    "nextDestination": "",
     "companyName": "",
     "location": "",
     "contactInformation": {
@@ -38,7 +38,7 @@
     "qualityControlInformation": ""
   },
   "retailerData": {
-    "previousBlockHash": "",
+    "nextDestination": "",
     "storeName": "",
     "location": "",
     "contactInformation": {
@@ -52,7 +52,7 @@
     "promotions": ""
   },
   "customer": {
-    "previousBlockHash": "",
+    "nextDestination": "",
     "purchaseDate": "",
     "storeLocation": "",
     "vegetableType": "",

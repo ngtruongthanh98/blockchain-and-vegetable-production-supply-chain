@@ -9,8 +9,8 @@
         class="form"
         style="max-width: 600px"
       >
-        <el-form-item label="Previous block hash">
-          <el-input v-model="formData.previousHash"></el-input>
+        <el-form-item label="Next Destination (Distributor)">
+          <el-input v-model="formData.nextDestination"></el-input>
         </el-form-item>
         <el-form-item label="Processing Facility Name">
           <el-input v-model="formData.facilityName"></el-input>
@@ -61,7 +61,7 @@ export default {
   data() {
     return {
       formData: {
-        previousHash: '',
+        nextDestination: '',
         facilityName: '',
         location: '',
         contactName: '',
@@ -79,7 +79,7 @@ export default {
       // submit data to server or store in local storage
     },
     resetForm() {
-      this.formData.previousHash = ''
+      this.formData.nextDestination = ''
       this.formData.facilityName = ''
       this.formData.location = ''
       this.formData.contactName = ''

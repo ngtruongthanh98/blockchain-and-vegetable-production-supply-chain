@@ -9,8 +9,8 @@
         class="form"
         style="max-width: 600px"
       >
-        <el-form-item label="Previous block hash">
-          <el-input v-model="formData.previousHash"></el-input>
+        <el-form-item label="Next Destination (Customer)">
+          <el-input v-model="formData.nextDestination"></el-input>
         </el-form-item>
         <el-form-item label="Store Name">
           <el-input v-model="formData.storeName"></el-input>
@@ -62,7 +62,7 @@ export default {
   data() {
     return {
       formData: {
-        previousHash: '',
+        nextDestination: '',
         storeName: '',
         location: '',
         contactName: '',
