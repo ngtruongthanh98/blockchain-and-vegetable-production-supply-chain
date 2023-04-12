@@ -287,6 +287,7 @@ export default {
       display: flex;
       align-items: center;
       padding: 20px;
+      min-width: 500px;
       border: 1px solid #ccc;
       border-radius: 5px;
       transition: background-color 0.2s ease;
@@ -318,7 +319,7 @@ export default {
     }
 
     .product-image {
-      width: 100px;
+      min-width: 100px;
       height: 100px;
       background-size: cover;
       background-position: center;
