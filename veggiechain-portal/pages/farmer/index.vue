@@ -52,6 +52,9 @@
             <el-radio label="Transitional"></el-radio>
           </el-radio-group>
         </el-form-item>
+        <el-form-item label="Vegetable Image">
+          <el-input v-model="formData.vegetableImage"></el-input>
+        </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="submitForm">Submit</el-button>
           <el-button @click="resetForm">Reset</el-button>
@@ -75,6 +78,7 @@ export default {
         pesticideUse: '',
         herbicideUse: '',
         certificationStatus: '',
+        vegetableImage: '',
       },
     }
   },
@@ -92,7 +96,8 @@ export default {
       this.formData.harvestDate = ''
       this.formData.pesticideUse = ''
       this.formData.herbicideUse = ''
-      this.formData.certificationStatus = ''
+      ;(this.formData.certificationStatus = ''),
+        (this.formData.vegetableImage = '')
     },
   },
 }
