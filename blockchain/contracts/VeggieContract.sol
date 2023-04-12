@@ -11,7 +11,7 @@ contract VeggieContract {
   string constant customerStage = "Customer";
 
 
-  mapping(uint => Veggie) private veggies;
+  mapping(uint => Veggie) public veggies;
 
   struct Veggie {
     uint id;

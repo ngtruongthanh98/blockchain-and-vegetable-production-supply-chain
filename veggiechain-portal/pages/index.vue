@@ -9,7 +9,7 @@
 import VmHero from '@/components/hero/Hero'
 import VmSubheader from '@/components/subheader/Subheader'
 import Web3 from 'web3'
-import veggieContract from '../../blockchain/build/contracts/VeggieContract.json'
+import veggieContract from '@/build/contracts/VeggieContract.json'
 
 export default {
   name: 'index',
@@ -25,7 +25,9 @@ export default {
       const provider = new Web3.providers.HttpProvider('http://localhost:7545');
       const web3 = new Web3(provider);
 
-      const myContract = new web3.eth.Contract(veggieContract.abi, veggieContract.address);
+      console.log(web3)
+      const myContract = new web3.eth.Contract(veggieContract.abi, veggieContract.networks[5777].address);
+      console.log(veggieContract)
 
       console.log(myContract.methods.veggies(1).call((err, result) => {
         if (err) {
