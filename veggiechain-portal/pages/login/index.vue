@@ -3,13 +3,6 @@
     <el-card class="login-card">
       <span slot="header">Login</span>
       <el-form ref="form" :model="form" :rules="rules" label-width="120px">
-        <el-form-item label="Username" prop="username">
-          <el-input v-model="form.username"></el-input>
-        </el-form-item>
-        <el-form-item label="Password" prop="password">
-          <el-input type="password" v-model="form.password"></el-input>
-        </el-form-item>
-
         <el-form-item label="User role" prop="userRole">
           <el-radio-group v-model="form.userRole">
             <el-radio label="Farmer"></el-radio>
@@ -21,7 +14,9 @@
         </el-form-item>
 
         <el-form-item>
-          <el-button type="primary" @click="onSubmit">Submit</el-button>
+          <el-button type="primary" @click="onMetamaskLogin"
+            >Login with Metamask</el-button
+          >
         </el-form-item>
       </el-form>
     </el-card>
@@ -38,25 +33,9 @@ export default {
       selectedOption: '',
       isUserLogged: this.$store.state.userInfo.isLoggedIn,
       form: {
-        username: '',
-        password: '',
         userRole: '',
       },
       rules: {
-        username: [
-          {
-            required: true,
-            message: 'Please enter your username',
-            trigger: 'blur',
-          },
-        ],
-        password: [
-          {
-            required: true,
-            message: 'Please enter your password',
-            trigger: 'blur',
-          },
-        ],
         userRole: [
           {
             required: true,
@@ -68,24 +47,29 @@ export default {
     }
   },
   methods: {
-    onSubmit() {
-      this.$store.commit('isUserLoggedIn', true)
-      this.$store.commit('setUserRole', this.form.userRole.toLowerCase())
-      this.$router.push(`/${this.form.userRole.toLowerCase()}`)
-
-      if (window.ethereum) {
-        window.ethereum.request({method: 'eth_requestAccounts'})
-        .then(() => {
-          this.connected = true;
-        });
+    onMetamaskLogin() {
+      if (!window.ethereum) {
+        alert('Metamask is not installed in your browser')
+        return
       }
 
-      console.log('here')
+      window.ethereum
+        .request({ method: 'eth_requestAccounts' })
+        .then((accounts) => {
+          const ethereumAddress = accounts[0]
+          this.$store.commit('isUserLoggedIn', true)
+          this.$store.commit('setUserRole', this.form.userRole.toLowerCase())
+          this.$store.commit('setEthereumAddress', ethereumAddress)
+          this.$router.push(`/${this.form.userRole.toLowerCase()}`)
+        })
+        .catch((error) => {
+          alert('Metamask login failed')
+          console.error(error)
+        })
     },
   },
 }
 </script>
-
 <style lang="scss" scoped>
 .login-page {
   min-height: calc(100vh - 72px - 80px);
