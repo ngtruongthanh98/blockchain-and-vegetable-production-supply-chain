@@ -15,8 +15,9 @@
           :style="{ backgroundImage: `url(${product.image})` }"
         ></div>
         <div class="product-info">
-          <h2>{{ product.name }}</h2>
-          <p>{{ product.description }}</p>
+          <b class="product-name">{{ product.name }}</b>
+          <p><b>Description:</b> {{ product.description }}</p>
+          <p><b>Unique id:</b> {{ product.id }}</p>
         </div>
         <nuxt-link
           :to="{
@@ -308,6 +309,7 @@ export default {
         cursor: pointer;
         transition: background-color 0.3s ease-in-out;
         margin-left: 16px;
+        min-width: 170px;
 
         &:hover {
           background-color: #388e3c;
@@ -328,7 +330,7 @@ export default {
     }
 
     .product-name {
-      font-size: 18px;
+      font-size: 24px;
       margin-bottom: 10px;
       color: #333;
     }
