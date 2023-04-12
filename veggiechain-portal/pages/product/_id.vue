@@ -29,15 +29,18 @@
       </div>
     </div>
 
-    <ChainingBlock @blockChanged="handleBlockChanged" />
+    <ChainingBlock
+      @blockChanged="handleBlockChanged"
+      :isHasCustomer="isHasCustomer"
+    />
   </div>
 </template>
 
 <script>
 import GeneralInfo from './general-info'
 import Stage1 from './stage_1_farm'
-import Stage2 from './stage_2_distributor'
-import Stage3 from './stage_3_factory'
+import Stage2 from './stage_2_factory'
+import Stage3 from './stage_3_distributor'
 import Stage4 from './stage_4_retailer'
 import Stage5 from './stage_5_costumer'
 import ChainingBlock from './chaining-blocks'
@@ -59,6 +62,7 @@ export default {
       productImageUrl:
         'https://media.phunutoday.vn/files/mai.doan/2019/01/31/ca-rot-1035.jpg',
       step: 1,
+      isHasCustomer: true,
     }
   },
 

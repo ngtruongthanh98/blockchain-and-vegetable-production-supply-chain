@@ -76,6 +76,7 @@
     <a
       href="#"
       class="login-btn flex items-center"
+      :class="{ hidden: $route.name === 'login' }"
       @click.prevent="onHandleLogin"
     >
       <span>{{ isUserLogged ? 'Logout' : 'Login' }}</span>
@@ -223,5 +224,9 @@ export default {
 
 .login-btn:hover {
   background-color: #9acffa;
+}
+
+.hidden {
+  display: none;
 }
 </style>
