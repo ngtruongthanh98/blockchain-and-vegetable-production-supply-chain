@@ -8,7 +8,21 @@
     "harvestDate": "",
     "isUsedPesticide": null,
     "isUsedHerbicide": null,
-    "certificationStatus": ""
+    "certificationStatus": "",
+    "vegetableImage": ""
+  },
+  "factoryData": {
+    "previousBlockHash": "",
+    "processingFacilityName": "",
+    "location": "",
+    "contactInformation": {
+      "name": "",
+      "email": "",
+      "phone": ""
+    },
+    "processingDate": "",
+    "typeOfProcessing": "",
+    "qualityControlInformation": ""
   },
   "distributorData": {
     "previousBlockHash": "",
@@ -23,20 +37,7 @@
     "transportationInformation": "",
     "qualityControlInformation": ""
   },
-  "factory": {
-    "previousBlockHash": "",
-    "processingFacilityName": "",
-    "location": "",
-    "contactInformation": {
-      "name": "",
-      "email": "",
-      "phone": ""
-    },
-    "processingDate": "",
-    "typeOfProcessing": "",
-    "qualityControlInformation": ""
-  },
-  "retailer": {
+  "retailerData": {
     "previousBlockHash": "",
     "storeName": "",
     "location": "",
