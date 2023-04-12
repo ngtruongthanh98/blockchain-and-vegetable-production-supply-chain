@@ -212,6 +212,9 @@ export default {
 }
 
 .login-btn {
+  display: flex;
+  justify-content: center;
+
   background-color: #89cff0;
   color: white;
   padding: 10px 20px;
@@ -220,6 +223,8 @@ export default {
   font-size: 1rem;
   transition: background-color 0.3s ease-in-out;
   margin-right: 16px;
+  width: 100px;
+  text-align: center;
 }
 
 .login-btn:hover {
