@@ -29,9 +29,12 @@
 </template>
 
 <script>
+import Web3 from 'web3'
 export default {
+  name: 'Login',
   data() {
     return {
+      connected: false,
       selectedOption: '',
       isUserLogged: this.$store.state.userInfo.isLoggedIn,
       form: {
@@ -69,6 +72,15 @@ export default {
       this.$store.commit('isUserLoggedIn', true)
       this.$store.commit('setUserRole', this.form.userRole.toLowerCase())
       this.$router.push(`/${this.form.userRole.toLowerCase()}`)
+
+      if (window.ethereum) {
+        window.ethereum.request({method: 'eth_requestAccounts'})
+        .then(() => {
+          this.connected = true;
+        });
+      }
+
+      console.log('here')
     },
   },
 }
