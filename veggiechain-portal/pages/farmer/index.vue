@@ -89,7 +89,6 @@ export default {
   methods: {
     submitForm() {
       console.log(this.formData)
-      // submit data to server or store in local storage
     },
     resetForm() {
       this.nextDestination = ''

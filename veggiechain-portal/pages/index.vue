@@ -17,9 +17,9 @@ export default {
     VmHero,
     VmSubheader,
   },
-  async mounted() {
-    await this.loadContract()
-  },
+  // async mounted() {
+  //   await this.loadContract()
+  // },
   methods: {
     async loadContract () {
       const provider = new Web3.providers.HttpProvider('http://localhost:7545');

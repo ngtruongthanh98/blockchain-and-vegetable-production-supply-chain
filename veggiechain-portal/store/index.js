@@ -1,4 +1,5 @@
 export const state = () => ({
+  contract: undefined,
   products: [
     {
       id: 1,
@@ -204,6 +205,12 @@ export const getters = {
 }
 
 export const mutations = {
+  addContract: (state, contract) => {
+    console.log("🚀 ~ file: index.js:209 ~ contract:", contract)
+    console.log("🚀 ~ file: index.js:210 ~ state.contract before:", state.contract)
+    state.contract = contract
+    console.log("🚀 ~ file: index.js:210 ~ state.contract after:", state.contract)
+  },
   addToCart: (state, id) => {
     state.products.forEach((el) => {
       if (id === el.id) {
