@@ -1,5 +1,6 @@
 export const state = () => ({
-  contract: undefined,
+  contractMethods: undefined,
+  accountAddress: '',
   products: [
     {
       id: 1,
@@ -205,11 +206,11 @@ export const getters = {
 }
 
 export const mutations = {
-  addContract: (state, contract) => {
-    console.log("🚀 ~ file: index.js:209 ~ contract:", contract)
-    console.log("🚀 ~ file: index.js:210 ~ state.contract before:", state.contract)
-    state.contract = contract
-    console.log("🚀 ~ file: index.js:210 ~ state.contract after:", state.contract)
+  addContractMethods: (state, contract) => {
+    state.contractMethods = contract
+  },
+  addAccountAddress: (state, account) => {
+    state.accountAddress = account
   },
   addToCart: (state, id) => {
     state.products.forEach((el) => {
