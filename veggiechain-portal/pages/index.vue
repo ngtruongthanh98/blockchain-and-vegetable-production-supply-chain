@@ -8,6 +8,7 @@
 <script>
 import VmHero from '@/components/hero/Hero'
 import VmSubheader from '@/components/subheader/Subheader'
+import { loadContract, addNewBlockAndReadIt } from '../utils/loadContract';
 
 export default {
   name: 'index',
@@ -15,5 +16,10 @@ export default {
     VmHero,
     VmSubheader,
   },
+  async mounted() {
+    loadContract()
+  },
+  methods: {
+  }
 }
 </script>
