@@ -9,9 +9,6 @@
         class="form"
         style="max-width: 600px"
       >
-        <el-form-item label="Next Destination (Customer)">
-          <el-input v-model="formData.nextDestination"></el-input>
-        </el-form-item>
         <el-form-item label="Store Name">
           <el-input v-model="formData.storeName"></el-input>
         </el-form-item>
@@ -58,11 +55,13 @@
 </template>
 
 <script>
+import { loadContract } from '@/utils/loadContract'
+
 export default {
   data() {
     return {
       formData: {
-        nextDestination: '',
+        nextDestination: null,
         storeName: '',
         location: '',
         contactName: '',
@@ -75,12 +74,45 @@ export default {
       },
     }
   },
+  mounted() {
+    this.loadContract = loadContract()
+
+    if (!this.$store.state.contractMethods) {
+      this.$store.commit('addContractMethods', this.loadContract.methods)
+    }
+  },
   methods: {
-    submitForm() {
+    async submitForm() {
       console.log(this.formData)
-      // submit data to server or store in local storage
+
+      try {
+        await this.loadContract.methods
+          .createNewVieggiesBlock(
+            this.formData.nextDestination,
+            JSON.stringify(this.formData),
+            'Retailer'
+          )
+          .send({ from: this.$store.state.accountAddress, gas: 3000000 })
+      } catch (error) {
+        console.log(error)
+      }
+
+      try {
+        const transactionData = await this.loadContract.methods
+          .getVeggieBlocksWithStage('Retailer')
+          .call()
+
+        console.log('transactionData: ', transactionData)
+      } catch (error) {
+        console.log(error)
+      }
+
+      this.resetForm()
+
+      console.log('Send data successfully')
     },
     resetForm() {
+      this.formData.nextDestination = null
       this.formData.farmName = ''
       this.formData.location = ''
       this.formData.farmerOwnerInfo = ''

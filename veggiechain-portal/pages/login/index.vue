@@ -9,7 +9,7 @@
             <el-radio label="Factory"></el-radio>
             <el-radio label="Distributor"></el-radio>
             <el-radio label="Retailer"></el-radio>
-            <el-radio label="Customer"></el-radio>
+            <!-- <el-radio label="Customer"></el-radio> -->
           </el-radio-group>
         </el-form-item>
 

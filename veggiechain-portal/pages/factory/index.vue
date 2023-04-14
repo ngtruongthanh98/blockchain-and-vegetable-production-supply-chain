@@ -10,7 +10,13 @@
         style="max-width: 600px"
       >
         <el-form-item label="Next Destination (Distributor)">
-          <el-input v-model="formData.nextDestination"></el-input>
+          <el-radio-group v-model="formData.nextDestination">
+            <el-radio
+              v-for="(distributor, index) in DISTRIBUTOR_LIST"
+              :key="index"
+              :label="distributor.address"
+            />
+          </el-radio-group>
         </el-form-item>
         <el-form-item label="Processing Facility Name">
           <el-input v-model="formData.facilityName"></el-input>
@@ -57,6 +63,8 @@
   </div>
 </template>
 <script>
+import { loadContract } from '@/utils/loadContract'
+
 export default {
   data() {
     return {
@@ -71,12 +79,54 @@ export default {
         processingType: '',
         qualityControlInfo: '',
       },
+      DISTRIBUTOR_LIST: [
+        {
+          name: 'Giao hang nhanh',
+          address: '0x09E94710a44464f53DF76ebD4C2399dF3715F7B4',
+        },
+        {
+          name: 'Vietel Post',
+          address: '0x0203d29Ae59EC6c13785d8E4655b07e8731438D3',
+        },
+      ],
+    }
+  },
+  mounted() {
+    this.loadContract = loadContract()
+
+    if (!this.$store.state.contractMethods) {
+      this.$store.commit('addContractMethods', this.loadContract.methods)
     }
   },
   methods: {
-    submitForm() {
+    async submitForm() {
       console.log(this.formData)
-      // submit data to server or store in local storage
+
+      try {
+        await this.loadContract.methods
+          .createNewVieggiesBlock(
+            this.formData.nextDestination,
+            JSON.stringify(this.formData),
+            'Factory'
+          )
+          .send({ from: this.$store.state.accountAddress, gas: 3000000 })
+      } catch (error) {
+        console.log(error)
+      }
+
+      try {
+        const transactionData = await this.loadContract.methods
+          .getVeggieBlocksWithStage('Factory')
+          .call()
+
+        console.log('transactionData: ', transactionData)
+      } catch (error) {
+        console.log(error)
+      }
+
+      this.resetForm()
+
+      console.log('Send data successfully')
     },
     resetForm() {
       this.formData.nextDestination = ''
