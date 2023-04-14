@@ -122,8 +122,8 @@ export default {
     const roles = [
       ['farmer', 'distributor', 'retailer'],
       ['distributor', 'factory', 'retailer'],
-      ['farmer', 'factory', 'retailer'],
-      ['distributor', 'farmer', 'factory'],
+      ['farmer', 'factory', 'distributor', 'retailer'],
+      ['distributor', 'retailer', 'factory'],
       ['factory', 'distributor', 'retailer'],
       ['farmer', 'distributor', 'retailer'],
       ['factory', 'distributor', 'retailer'],

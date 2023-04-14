@@ -46,6 +46,12 @@
 
 <script>
 export default {
+  data() {
+    return {
+      stageDetail: {}
+    }    
+  },
+
   props: {
     productId: {
       type: String,
@@ -59,7 +65,7 @@ export default {
 
   methods: {
     async loadStageInfo() {
-
+      
     }
   },
 }

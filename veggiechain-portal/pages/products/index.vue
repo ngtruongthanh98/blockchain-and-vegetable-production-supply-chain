@@ -267,12 +267,17 @@ export default {
             .getCommentFromFarmerByConsignment(retailerProducts[i].consignment)
             .call();
 
-          let productInfoJSON = JSON.parse(productInfo.comment)
+          let productInfoJSON = JSON.parse(productInfo)
           console.log('productInfoJSON', productInfoJSON)
-          // blockProducts.push({
-          //   id: 
-          // })
+          blockProducts.push({
+            id: retailerProducts[i].consignment,
+            name: productInfoJSON.vegetableType,
+            description: productInfoJSON.vegetableType + ' planted on ' + productInfoJSON.farmName + ' at ' + productInfoJSON.location,
+            image: productInfoJSON.vegetableImage
+          })
         }
+
+        this.products = blockProducts
 
       } catch(err) {
         console.log(err)

@@ -88,7 +88,7 @@ export default {
       try {
         await this.loadContract.methods
           .createNewVieggiesBlock(
-            this.formData.nextDestination,
+            this.$store.state.accountAddress,
             JSON.stringify(this.formData),
             'Retailer'
           )
