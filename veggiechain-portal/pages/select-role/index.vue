@@ -6,7 +6,7 @@
         <el-form-item label="User role" prop="userRole">
           <el-radio-group v-model="form.userRole">
             <el-radio
-              v-for="(item, index) in getRoles(accountAddress)"
+              v-for="(item, index) in getRoles()"
               :key="index"
               :label="capitalizeFirstLetter(item)"
             ></el-radio>
@@ -59,7 +59,7 @@ export default {
       this.$store.commit('setUserRole', this.form.userRole.toLowerCase())
       this.$router.push(`/${this.form.userRole.toLowerCase()}`)
     },
-    getRoles(accountAddress) {
+    getRoles() {
       return this.$store.state.accountMappingRole[this.elementIndex]?.roles
     },
     capitalizeFirstLetter(string) {
