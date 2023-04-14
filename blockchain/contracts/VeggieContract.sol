@@ -82,4 +82,20 @@ contract VeggieContract {
 
     return res;
   }
+
+  function getVeggieStageByConsignment(string memory _consignment) public view returns (Veggie[] memory) {
+    Veggie[] memory res = new Veggie[](5);
+
+    uint16 count = 0;
+    for (uint16 i = 1; i < id + 1; i++) {
+      if (isEqualStrings(veggies[i].consignment, _consignment)) {
+        // same consignment, add to result transaction
+        if (count < 5) {
+          res[count] = veggies[i];
+        }
+      }
+    }
+
+    return res;
+  }
 }
