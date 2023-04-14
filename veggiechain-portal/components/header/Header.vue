@@ -114,6 +114,7 @@ export default {
     console.log('accounts: ', accounts)
 
     const accountList = accounts.accountList
+    this.$store.commit('setOriginAddressList', accountList)
 
     const customAccountList = []
 
@@ -133,12 +134,12 @@ export default {
     const accountArray = []
     for (let i = 0; i < accountList.length; i++) {
       const account = {
-        address: accountList[i].toUpperCase(),
+        address: accountList[i].toLowerCase(),
         roles: roles[i],
       }
       accountArray.push(account)
 
-      customAccountList.push(accountList[i].toUpperCase())
+      customAccountList.push(accountList[i].toLowerCase())
     }
 
     this.$store.commit('setAccountMappingRole', accountArray)
@@ -162,6 +163,7 @@ export default {
           .request({ method: 'eth_requestAccounts' })
           .then((accounts) => {
             const ethereumAddress = accounts[0]
+            console.log('ethereumAddress: ', accounts[0])
             this.$store.commit('isUserLoggedIn', true)
             this.$store.commit('setAccountAddress', ethereumAddress)
             this.$router.push('/select-role')

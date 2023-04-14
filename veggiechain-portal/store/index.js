@@ -3,6 +3,7 @@ export const state = () => ({
   accountAddress: '',
   accountList: [],
   accountMappingRole: [],
+  originAddressList: [],
   products: [
     {
       id: 1,
@@ -216,6 +217,9 @@ export const mutations = {
   },
   setAccountList: (state, accountList) => {
     state.accountList = accountList
+  },
+  setOriginAddressList: (state, originAddressList) => {
+    state.originAddressList = originAddressList
   },
   setAccountMappingRole: (state, accountMappingRole) => {
     state.accountMappingRole = accountMappingRole

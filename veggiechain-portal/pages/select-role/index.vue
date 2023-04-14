@@ -49,7 +49,7 @@ export default {
   computed: {
     elementIndex() {
       return this.$store.state.accountList.indexOf(
-        this.$store.state.accountAddress.toUpperCase()
+        this.$store.state.accountAddress.toLowerCase()
       )
     },
   },
