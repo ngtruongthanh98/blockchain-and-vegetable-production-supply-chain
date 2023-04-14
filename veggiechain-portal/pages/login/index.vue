@@ -59,7 +59,7 @@ export default {
           const ethereumAddress = accounts[0]
           this.$store.commit('isUserLoggedIn', true)
           this.$store.commit('setUserRole', this.form.userRole.toLowerCase())
-          this.$store.commit('setEthereumAddress', ethereumAddress)
+          this.$store.commit('addAccountAddress', ethereumAddress)
           this.$router.push(`/${this.form.userRole.toLowerCase()}`)
         })
         .catch((error) => {

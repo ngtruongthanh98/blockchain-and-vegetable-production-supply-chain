@@ -9,29 +9,20 @@
 
 <script>
 import Web3 from 'web3'
-import veggieContract from '@/build/contracts/VeggieContract.json'
+import { loadContractMethods } from '@/utils/loadContract'
 
 export default {
-  mounted() {
-    this.loadContract()
+  data() {
+    return {
+      loadContract: {},
+    }
   },
-  methods: {
-    async loadContract() {
-      const provider = new Web3.providers.HttpProvider('http://localhost:7545')
-      const web3 = new Web3(provider)
+  mounted() {
+    this.loadContract = loadContractMethods()
 
-      const myContract = new web3.eth.Contract(
-        veggieContract.abi,
-        veggieContract.networks[5777].address
-      )
-
-      console.log('myContract: ', myContract)
-
-      if (!this.$store.state.contract) {
-        this.$store.commit('addContractMethods', myContract.methods)
-        this.$store.commit('addAccountAddress', myContract._address)
-      }
-    },
+    if (!this.$store.state.contractMethods) {
+      this.$store.commit('addContractMethods', this.loadContract.methods)
+    }
   },
 }
 </script>
