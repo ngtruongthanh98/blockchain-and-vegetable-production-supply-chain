@@ -1,10 +1,13 @@
 <template>
   <div class="products-page">
-    <div>Vegetable Products</div>
-    <div v-for="product in sortedProducts" :key="product.id">
-      <nuxt-link
-        :to="{ name: 'product-id', params: { id: product.id } }"
-        class="product-link flex items-center"
+    <div class="title">Vegetable Products</div>
+    <div
+      class="product-item"
+      v-for="product in sortedProducts"
+      :key="product.id"
+    >
+      <div
+        class="product-container flex items-center"
         exact-active-class="is-active"
       >
         <div
@@ -12,24 +15,47 @@
           :style="{ backgroundImage: `url(${product.image})` }"
         ></div>
         <div class="product-info">
-          <h2>{{ product.name }}</h2>
-          <p>{{ product.description }}</p>
+          <b class="product-name">{{ product.name }}</b>
+          <p><b>Description:</b> {{ product.description }}</p>
+          <p><b>Unique id:</b> {{ product.id }}</p>
         </div>
-      </nuxt-link>
+        <nuxt-link
+          :to="{
+            name: 'product-id',
+            params: {
+              id: product.id,
+              imageUrl: product.image,
+              productName: product.name,
+            },
+          }"
+          class="view-btn"
+          >View transactions</nuxt-link
+        >
+      </div>
     </div>
+
+    <button
+      v-show="showScrollButton"
+      @click="scrollToTop"
+      class="scroll-to-top"
+    >
+      Scroll to Top
+    </button>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
+      showScrollButton: false,
+
       products: [
         {
           id: 'carrot7162gshqks',
           name: 'Carrot',
           description: 'Fresh organic carrots',
           image:
-            'https://www.plantsofdistinction.co.uk/stock/mweb/img003063.jpg',
+            'https://cf.organicbazar.net/wp-content/uploads/2021/06/Untitled-design-44.jpg',
         },
         {
           id: 'tomato2378ghdks',
@@ -78,7 +104,7 @@ export default {
           name: 'Bell Pepper',
           description: 'Colorful and flavorful bell peppers',
           image:
-            'https://www.chilipeppermadness.com/wp-content/uploads/2019/08/Bell-Peppers.jpg',
+            'https://www.gomarket.com.ng/wp-content/uploads/2020/05/bellp.jpg',
         },
         {
           id: 'cauliflower3168dkls',
@@ -206,53 +232,134 @@ export default {
       return this.products.sort((a, b) => a.name.localeCompare(b.name))
     },
   },
+  methods: {
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      })
+    },
+    handleScroll() {
+      if (window.pageYOffset > 50) {
+        this.showScrollButton = true
+      } else {
+        this.showScrollButton = false
+      }
+    },
+  },
+  created() {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', this.handleScroll)
+    }
+  },
+  destroyed() {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
+  },
 }
 </script>
 <style lang="scss" scoped>
 .products-page {
   min-height: calc(100vh - 72px - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 48px;
 
   .title {
     font-size: 24px;
+    margin-top: 24px;
     margin-bottom: 20px;
     color: #333;
+
+    text-align: center;
   }
 
-  .product-link {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
+  .product-item {
+    width: 50vw;
 
-    &:hover,
-    &.is-active {
-      background-color: #f5f5f5;
+    & + .product-item {
+      margin-top: 16px;
+    }
+
+    .product-container {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      min-width: 500px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: background-color 0.2s ease;
+
+      &:hover,
+      &.is-active {
+        background-color: $primary-third;
+      }
+
+      .view-btn {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 4px;
+        background-color: #4caf50;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+        margin-left: 16px;
+        min-width: 170px;
+
+        &:hover {
+          background-color: #388e3c;
+        }
+      }
+    }
+
+    .product-image {
+      min-width: 100px;
+      height: 100px;
+      background-size: cover;
+      background-position: center;
+      margin-right: 20px;
+    }
+
+    .product-info {
+      flex-grow: 1;
+    }
+
+    .product-name {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .product-description {
+      font-size: 14px;
+      color: #666;
     }
   }
 
-  .product-image {
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    background-position: center;
-    margin-right: 20px;
+  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
 
-  .product-info {
-    flex-grow: 1;
+  .scroll-to-top:hover {
+    background-color: #555;
   }
 
-  .product-name {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
-  }
-
-  .product-description {
-    font-size: 14px;
-    color: #666;
+  .scroll-to-top.show {
+    display: block;
   }
 }
 </style>

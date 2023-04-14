@@ -1,4 +1,6 @@
 export const state = () => ({
+  contractMethods: undefined,
+  accountAddress: '',
   products: [
     {
       id: 1,
@@ -115,6 +117,7 @@ export const state = () => ({
     hasSearched: false,
     name: '',
     productTitleSearched: '',
+    role: 'customer',
   },
   systemInfo: {
     openLoginModal: false,
@@ -179,6 +182,9 @@ export const getters = {
   getUserName: (state) => {
     return state.userInfo.name
   },
+  getUserRole: (state) => {
+    return state.userInfo.role
+  },
   isLoginModalOpen: (state) => {
     return state.systemInfo.openLoginModal
   },
@@ -200,6 +206,12 @@ export const getters = {
 }
 
 export const mutations = {
+  addContractMethods: (state, contract) => {
+    state.contractMethods = contract
+  },
+  addAccountAddress: (state, account) => {
+    state.accountAddress = account
+  },
   addToCart: (state, id) => {
     state.products.forEach((el) => {
       if (id === el.id) {
@@ -237,6 +249,9 @@ export const mutations = {
   },
   setUserName: (state, name) => {
     state.userInfo.name = name
+  },
+  setUserRole: (state, role) => {
+    state.userInfo.role = role
   },
   setProductTitleSearched: (state, titleSearched) => {
     state.userInfo.productTitleSearched = titleSearched

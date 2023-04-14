@@ -1,6 +1,14 @@
 <template>
   <div class="information-blocks">
-    <div class="block block-1" :class="{ active: currentBlock === 1 }">
+    <div
+      class="block block-1"
+      :class="{ active: currentBlock === 1 }"
+      :style="
+        isHasCustomer
+          ? 'width: calc(100% / 5 - 16px)'
+          : 'width: calc(100% / 4 - 16px)'
+      "
+    >
       <div class="block-title">Farm</div>
       <div class="block-content">
         <p>Farm name</p>
@@ -8,23 +16,47 @@
       </div>
     </div>
 
-    <div class="block block-2" :class="{ active: currentBlock === 2 }">
-      <div class="block-title">Distributor</div>
+    <div
+      class="block block-2"
+      :class="{ active: currentBlock === 2 }"
+      :style="
+        isHasCustomer
+          ? 'width: calc(100% / 5 - 16px)'
+          : 'width: calc(100% / 4 - 16px)'
+      "
+    >
+      <div class="block-title">Factory</div>
       <div class="block-content">
-        <p>Distributor name</p>
+        <p>Factory name</p>
         <button @click="changeBlock(2)">View</button>
       </div>
     </div>
 
-    <div class="block block-3" :class="{ active: currentBlock === 3 }">
-      <div class="block-title">Factory</div>
+    <div
+      class="block block-3"
+      :class="{ active: currentBlock === 3 }"
+      :style="
+        isHasCustomer
+          ? 'width: calc(100% / 5 - 16px)'
+          : 'width: calc(100% / 4 - 16px)'
+      "
+    >
+      <div class="block-title">Distributor</div>
       <div class="block-content">
-        <p>Factory name</p>
+        <p>Distributor name</p>
         <button @click="changeBlock(3)">View</button>
       </div>
     </div>
 
-    <div class="block block-4" :class="{ active: currentBlock === 4 }">
+    <div
+      class="block block-4"
+      :class="{ active: currentBlock === 4 }"
+      :style="
+        isHasCustomer
+          ? 'width: calc(100% / 5 - 16px)'
+          : 'width: calc(100% / 4 - 16px)'
+      "
+    >
       <div class="block-title">Retailer</div>
       <div class="block-content">
         <p>Retailer name</p>
@@ -32,7 +64,16 @@
       </div>
     </div>
 
-    <div class="block block-5" :class="{ active: currentBlock === 5 }">
+    <div
+      v-if="isHasCustomer"
+      class="block block-5"
+      :class="{ active: currentBlock === 5 }"
+      :style="
+        isHasCustomer
+          ? 'width: calc(100% / 5 - 16px)'
+          : 'width: calc(100% / 4 - 16px)'
+      "
+    >
       <div class="block-title">Customer</div>
       <div class="block-content">
         <p>Customer name</p>
@@ -48,6 +89,12 @@ export default {
     return {
       currentBlock: 1,
     }
+  },
+  props: {
+    isHasCustomer: {
+      type: Boolean,
+      default: true,
+    },
   },
   methods: {
     changeBlock(newBlock) {
@@ -65,15 +112,15 @@ export default {
   justify-content: center;
   align-items: center;
   margin-top: 36px;
-  margin-bottom: 36px;
 
+  padding-bottom: 36px;
   padding-right: 32px;
   padding-left: 32px;
 }
 
 .block {
   padding: 10px;
-  width: calc(100% / 5 - 16px);
+  width: calc(100% / 4 - 16px);
   transition: opacity 0.2s ease-in-out;
   border: 1px dashed black;
 
@@ -129,7 +176,7 @@ export default {
   order: 1;
 
   &.active {
-    background-color: lightblue;
+    background-color: $primary-third;
   }
 
   .block-title {
@@ -141,7 +188,7 @@ export default {
   order: 2;
 
   &.active {
-    background-color: lightblue;
+    background-color: $primary-third;
   }
 
   .block-title {
@@ -162,7 +209,7 @@ export default {
   order: 3;
 
   &.active {
-    background-color: lightblue;
+    background-color: $primary-third;
   }
 
   .block-title {
@@ -183,7 +230,7 @@ export default {
   order: 4;
 
   &.active {
-    background-color: lightblue;
+    background-color: $primary-third;
   }
 
   .block-title {
@@ -204,7 +251,7 @@ export default {
   order: 5;
 
   &.active {
-    background-color: lightblue;
+    background-color: $primary-third;
   }
 
   .block-title {
