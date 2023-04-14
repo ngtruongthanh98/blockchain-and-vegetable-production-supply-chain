@@ -8,8 +8,7 @@
 </template>
 
 <script>
-import Web3 from 'web3'
-import { loadContractMethods } from '@/utils/loadContract'
+import { loadContract } from '@/utils/loadContract'
 
 export default {
   data() {
@@ -18,7 +17,7 @@ export default {
     }
   },
   mounted() {
-    this.loadContract = loadContractMethods()
+    this.loadContract = loadContract()
 
     if (!this.$store.state.contractMethods) {
       this.$store.commit('addContractMethods', this.loadContract.methods)

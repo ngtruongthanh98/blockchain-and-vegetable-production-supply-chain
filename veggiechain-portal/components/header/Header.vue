@@ -73,19 +73,31 @@
       </nuxt-link>
     </div>
 
-    <a
-      href="#"
-      class="login-btn flex items-center"
-      :class="{ hidden: $route.name === 'login' }"
-      @click.prevent="onHandleLogin"
-    >
-      <span>{{ isUserLogged ? 'Logout' : 'Login' }}</span>
-    </a>
+    <div class="button-container">
+      <div
+        v-if="this.$store.state.accountAddress && isUserLogged"
+        class="getting-text"
+      >
+        <span>Hi</span>
+        <b>{{ maskAddress(this.$store.state.accountAddress) }}</b>
+      </div>
+
+      <a
+        href="#"
+        class="login-btn flex items-center"
+        :class="{ hidden: $route.name === 'login' }"
+        @click.prevent="onHandleLogin"
+      >
+        <span>{{ isUserLogged ? 'Logout' : 'Login' }}</span>
+      </a>
+    </div>
   </nav>
 </template>
 
 
 <script>
+import { maskAddress } from '@/utils'
+
 export default {
   name: 'VmHeader',
   computed: {
@@ -97,15 +109,15 @@ export default {
     },
   },
   methods: {
+    maskAddress,
     onHandleLogin() {
       if (this.isUserLogged) {
         this.$store.commit('isUserLoggedIn', false)
+        this.$store.commit('addAccountAddress', '')
         this.$router.push('/')
       } else {
         this.$router.push('/login')
       }
-
-      console.log('button clicked')
     },
   },
 }
@@ -211,27 +223,37 @@ export default {
   }
 }
 
-.login-btn {
+.button-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 
-  background-color: #89cff0;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background-color 0.3s ease-in-out;
-  margin-right: 16px;
-  width: 100px;
-  text-align: center;
-}
+  .login-btn {
+    display: flex;
+    justify-content: center;
 
-.login-btn:hover {
-  background-color: #9acffa;
-}
+    background-color: #89cff0;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
+    margin-right: 16px;
+    width: 100px;
+    text-align: center;
+  }
 
-.hidden {
-  display: none;
+  .login-btn:hover {
+    background-color: #9acffa;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .getting-text {
+    margin-right: 16px;
+  }
 }
 </style>
