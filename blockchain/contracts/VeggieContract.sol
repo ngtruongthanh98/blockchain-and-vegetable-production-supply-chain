@@ -98,4 +98,14 @@ contract VeggieContract {
 
     return res;
   }
+
+  function getCommentFromFarmerByConsignment(string memory _consignment) public view returns (string memory) {
+    for (uint16 i = 1; i < id + 1; i++) {
+      if (isEqualStrings(veggies[i].consignment, _consignment) && isEqualStrings(veggies[i].stage, farmerStage)) {
+        return veggies[i].comment;
+      }
+    }
+
+    return "not found";
+  }
 }
