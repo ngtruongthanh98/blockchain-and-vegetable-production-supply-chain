@@ -4,40 +4,80 @@
 
     <div class="item">
       <div class="item-title">Processing facility name:</div>
-      <div class="item-content">ABC Factory</div>
+      <div class="item-content">{{ stageDetail.facilityName }}</div>
     </div>
 
     <div class="item">
       <div class="item-title">Location:</div>
-      <div class="item-content">City, State</div>
+      <div class="item-content">{{ stageDetail.location }}</div>
     </div>
 
     <div class="item">
       <div class="item-title">Contact information:</div>
-      <div class="item-content">Name, Email, Phone</div>
+      <div class="item-content">Name: {{ stageDetail.contactName }} Email: {{ stageDetail.contactEmail }} Phone {{ stageDetail.contactPhone }}</div>
     </div>
 
     <div class="item">
       <div class="item-title">Processing date:</div>
-      <div class="item-content">MM/DD/YYYY</div>
+      <div class="item-content">{{ stageDetail.processingDate }}</div>
     </div>
 
     <div class="item">
       <div class="item-title">Type of processing:</div>
-      <div class="item-content">Cleaning, cutting, packaging</div>
+      <div class="item-content">{{ stageDetail.processingType }}</div>
     </div>
 
     <div class="item">
       <div class="item-title">Quality control information:</div>
       <div class="item-content">
-        Quality control procedures, inspection results
+        {{ stageDetail.qualityControlInfo }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      stageDetail: {}
+    }    
+  },
+
+  props: {
+    productId: {
+      type: String,
+      default: '',
+    },
+  },
+
+  mounted() {
+    this.loadStageInfo()
+  },
+
+  methods: {
+    async loadStageInfo() {
+      console.log('productId: ', this.productId)
+
+      const stageInfo = await this.$store.state.contractMethods
+        .getVeggieByConsignmentAndStage(this.productId, 'Factory')
+        .call()
+
+      let stageJSON = JSON.parse(stageInfo.comment)
+      console.log('stageDetail: ', stageJSON)
+      this.stageDetail = {
+        facilityName: stageJSON.facilityName,
+        location: stageJSON.location,
+        contactName: stageJSON.contactName,
+        contactEmail: stageJSON.contactEmail,
+        contactPhone: stageJSON.contactPhone,
+        processingDate: stageJSON.processingDate,
+        processingType: stageJSON.processingType,
+        qualityControlInfo: stageJSON.qualityControlInfo
+      }
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>
