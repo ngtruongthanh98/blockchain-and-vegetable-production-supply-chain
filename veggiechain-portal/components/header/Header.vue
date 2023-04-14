@@ -89,6 +89,7 @@
         @click.prevent="onHandleLogin"
       >
         <span>{{ isUserLogged ? 'Logout' : 'Login with MetaMask' }}</span>
+        <span v-if="!isUserLogged" class="metamask-icon"></span>
       </a>
     </div>
   </nav>
@@ -297,6 +298,16 @@ export default {
     margin-right: 16px;
     min-width: 100px;
     text-align: center;
+
+    .metamask-icon {
+      margin-left: 8px;
+      background: url('../../static/svg/MetaMask_Fox.svg') no-repeat;
+      background-position: 50% 50%;
+      background-size: 40px;
+
+      width: 40px;
+      height: 40px;
+    }
   }
 
   .login-btn:hover {

@@ -74,6 +74,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f5f5f5;
 
   .login-card {
     width: 400px;
