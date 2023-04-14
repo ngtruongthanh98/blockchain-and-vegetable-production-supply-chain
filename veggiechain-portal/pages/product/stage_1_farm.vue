@@ -4,42 +4,37 @@
 
     <div class="item">
       <div class="item-title">Farm name:</div>
-      <div class="item-content">abab</div>
+      <div class="item-content">{{ stageDetail.farmName }}</div>
     </div>
 
     <div class="item">
       <div class="item-title">Location:</div>
-      <div class="item-content">City, State</div>
+      <div class="item-content">{{ stageDetail.location }}</div>
     </div>
 
     <div class="item">
       <div class="item-title">Farmer/Owner information:</div>
-      <div class="item-content">Name, Email, Phone</div>
+      <div class="item-content">{{ stageDetail.farmerOwnerInfo }}</div>
     </div>
 
     <div class="item">
       <div class="item-title">Vegetable type(s):</div>
-      <div class="item-content">Tomatoes, Lettuce, Carrots</div>
+      <div class="item-content">{{ stageDetail.vegetableType }}</div>
     </div>
 
     <div class="item">
       <div class="item-title">Planting and harvest dates:</div>
-      <div class="item-content">June 1st to August 30th</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title">Farming practices:</div>
-      <div class="item-content">Organic</div>
+      <div class="item-content">Planting: {{ stageDetail.plantingDate }} Harvest: {{ stageDetail.harvestDate }}</div>
     </div>
 
     <div class="item">
       <div class="item-title">Pesticide and herbicide use:</div>
-      <div class="item-content">None</div>
+      <div class="item-content">Pesticide: {{ stageDetail.pesticideUse }} Herbicide: {{ stageDetail.herbicideUse }}</div>
     </div>
 
     <div class="item">
       <div class="item-title">Certification status:</div>
-      <div class="item-content">Certified Organic</div>
+      <div class="item-content">{{ stageDetail.certificationStatus }}</div>
     </div>
   </div>
 </template>
@@ -65,7 +60,25 @@ export default {
 
   methods: {
     async loadStageInfo() {
-      
+      console.log('productId: ', this.productId)
+
+      const stageInfo = await this.$store.state.contractMethods
+        .getVeggieByConsignmentAndStage(this.productId, 'Farmer')
+        .call()
+
+      let stageJSON = JSON.parse(stageInfo.comment)
+      console.log('stageDetail: ', stageJSON)
+      this.stageDetail = {
+        farmName: stageJSON.farmName,
+        location: stageJSON.location,
+        farmerOwnerInfo: stageJSON.farmerOwnerInfo,
+        vegetableType: stageJSON.vegetableType,
+        pesticideUse: stageJSON.pesticideUse,
+        herbicideUse: stageJSON.herbicideUse,
+        plantingDate: stageJSON.plantingDate,
+        harvestDate: stageJSON.harvestDate,
+        certificationStatus: stageJSON.certificationStatus
+      }
     }
   },
 }
