@@ -45,7 +45,24 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    productId: {
+      type: String,
+      default: '',
+    },
+  },
+
+  mounted() {
+    this.loadStageInfo()
+  },
+
+  methods: {
+    async loadStageInfo() {
+
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>

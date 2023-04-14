@@ -21,11 +21,11 @@
       />
 
       <div class="product-cycle-container">
-        <Stage1 v-show="step === 1" />
-        <Stage2 v-if="step === 2" />
-        <Stage3 v-if="step === 3" />
-        <Stage4 v-if="step === 4" />
-        <Stage5 v-if="step === 5" />
+        <Stage1 v-show="step === 1" :productId="this.$route.params.id" />
+        <Stage2 v-if="step === 2" :productId="this.$route.params.id" />
+        <Stage3 v-if="step === 3" :productId="this.$route.params.id" />
+        <Stage4 v-if="step === 4" :productId="this.$route.params.id" />
+        <Stage5 v-if="step === 5" :productId="this.$route.params.id" />
       </div>
     </div>
 
