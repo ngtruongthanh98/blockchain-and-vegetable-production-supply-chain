@@ -65,3 +65,16 @@ export function transformArray(accountAddressList, originAddressList) {
 
   return mappedAddressList
 }
+
+export function findIndexes(accountAddresses, originAddressList) {
+  const indexes = [];
+
+  for (const accountAddress of accountAddresses) {
+    const index = originAddressList.findIndex(
+      (address) => address.toLowerCase() === accountAddress.toLowerCase()
+    );
+    indexes.push(index);
+  }
+
+  return indexes;
+}
