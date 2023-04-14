@@ -1,6 +1,8 @@
 export const state = () => ({
   contractMethods: undefined,
   accountAddress: '',
+  accountList: [],
+  accountMappingRole: [],
   products: [
     {
       id: 1,
@@ -117,7 +119,7 @@ export const state = () => ({
     hasSearched: false,
     name: '',
     productTitleSearched: '',
-    role: 'customer',
+    role: '',
   },
   systemInfo: {
     openLoginModal: false,
@@ -209,9 +211,16 @@ export const mutations = {
   addContractMethods: (state, contract) => {
     state.contractMethods = contract
   },
-  addAccountAddress: (state, account) => {
+  setAccountAddress: (state, account) => {
     state.accountAddress = account
   },
+  setAccountList: (state, accountList) => {
+    state.accountList = accountList
+  },
+  setAccountMappingRole: (state, accountMappingRole) => {
+    state.accountMappingRole = accountMappingRole
+  },
+  
   addToCart: (state, id) => {
     state.products.forEach((el) => {
       if (id === el.id) {

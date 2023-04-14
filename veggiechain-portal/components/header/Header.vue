@@ -88,7 +88,7 @@
         :class="{ hidden: $route.name === 'login' }"
         @click.prevent="onHandleLogin"
       >
-        <span>{{ isUserLogged ? 'Logout' : 'Login' }}</span>
+        <span>{{ isUserLogged ? 'Logout' : 'Login with MetaMask' }}</span>
       </a>
     </div>
   </nav>
@@ -97,6 +97,8 @@
 
 <script>
 import { maskAddress } from '@/utils'
+import Web3 from 'web3'
+import accounts from '../../../accounts.json'
 
 export default {
   name: 'VmHeader',
@@ -108,15 +110,66 @@ export default {
       return this.$store.getters.getUserRole
     },
   },
+  mounted() {
+    console.log('accounts: ', accounts)
+
+    const accountList = accounts.accountList
+
+    const customAccountList = []
+
+    const roles = [
+      ['farmer', 'distributor', 'retailer'],
+      ['distributor', 'factory', 'retailer'],
+      ['farmer', 'factory', 'retailer'],
+      ['distributor', 'farmer', 'factory'],
+      ['factory', 'distributor', 'retailer'],
+      ['farmer', 'distributor', 'retailer'],
+      ['factory', 'distributor', 'retailer'],
+      ['farmer', 'retailer'],
+      ['farmer', 'distributor', 'retailer'],
+      ['distributor', 'retailer'],
+    ]
+
+    const accountArray = []
+    for (let i = 0; i < accountList.length; i++) {
+      const account = {
+        address: accountList[i].toUpperCase(),
+        roles: roles[i],
+      }
+      accountArray.push(account)
+
+      customAccountList.push(accountList[i].toUpperCase())
+    }
+
+    this.$store.commit('setAccountMappingRole', accountArray)
+    this.$store.commit('setAccountList', customAccountList)
+  },
   methods: {
     maskAddress,
     onHandleLogin() {
       if (this.isUserLogged) {
         this.$store.commit('isUserLoggedIn', false)
-        this.$store.commit('addAccountAddress', '')
+        this.$store.commit('setAccountAddress', '')
+        this.$store.commit('setUserRole', '')
         this.$router.push('/')
       } else {
-        this.$router.push('/login')
+        if (!window.ethereum) {
+          alert('Metamask is not installed in your browser')
+          return
+        }
+
+        window.ethereum
+          .request({ method: 'eth_requestAccounts' })
+          .then((accounts) => {
+            const ethereumAddress = accounts[0]
+            this.$store.commit('isUserLoggedIn', true)
+            this.$store.commit('setAccountAddress', ethereumAddress)
+            this.$router.push('/select-role')
+          })
+          .catch((error) => {
+            alert('Metamask login failed')
+            console.error(error)
+          })
       }
     },
   },
@@ -240,7 +293,7 @@ export default {
     font-size: 1rem;
     transition: background-color 0.3s ease-in-out;
     margin-right: 16px;
-    width: 100px;
+    min-width: 100px;
     text-align: center;
   }
 
