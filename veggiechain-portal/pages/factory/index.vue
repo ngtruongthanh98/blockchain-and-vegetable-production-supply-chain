@@ -12,9 +12,12 @@
         <el-form-item label="Next Destination (Distributor)">
           <el-radio-group v-model="formData.nextDestination">
             <el-radio
-              v-for="(distributor, index) in DISTRIBUTOR_LIST"
+              v-for="(distributor, index) in transformArray(
+                distributors,
+                this.$store.state.originAddressList
+              )"
               :key="index"
-              :label="distributor.address"
+              :label="distributor"
             />
           </el-radio-group>
         </el-form-item>
@@ -64,6 +67,7 @@
 </template>
 <script>
 import { loadContract } from '@/utils/loadContract'
+import { findDistributors, transformArray } from '@/utils'
 
 export default {
   data() {
@@ -79,16 +83,7 @@ export default {
         processingType: '',
         qualityControlInfo: '',
       },
-      DISTRIBUTOR_LIST: [
-        {
-          name: 'Giao hang nhanh',
-          address: '0x09E94710a44464f53DF76ebD4C2399dF3715F7B4',
-        },
-        {
-          name: 'Vietel Post',
-          address: '0x0203d29Ae59EC6c13785d8E4655b07e8731438D3',
-        },
-      ],
+      distributors: [],
     }
   },
   mounted() {
@@ -97,8 +92,14 @@ export default {
     if (!this.$store.state.contractMethods) {
       this.$store.commit('addContractMethods', this.loadContract.methods)
     }
+
+    this.distributors = findDistributors(
+      this.$store.state.accountMappingRole,
+      this.$store.state.accountAddress
+    )
   },
   methods: {
+    transformArray,
     async submitForm() {
       console.log(this.formData)
 

@@ -1,12 +1,20 @@
 <template>
   <div class="login-page">
     <el-card class="login-card">
-      <span slot="header">Login</span>
+      <span slot="header">Select your role</span>
       <el-form ref="form" :model="form" :rules="rules" label-width="120px">
+        <el-form-item label="User role" prop="userRole">
+          <el-radio-group v-model="form.userRole">
+            <el-radio
+              v-for="(item, index) in getRoles(accountAddress)"
+              :key="index"
+              :label="capitalizeFirstLetter(item)"
+            ></el-radio>
+          </el-radio-group>
+        </el-form-item>
+
         <el-form-item>
-          <el-button type="primary" @click="onMetamaskLogin"
-            >Login with Metamask</el-button
-          >
+          <el-button type="primary" @click="onSelectRole">Submit</el-button>
         </el-form-item>
       </el-form>
     </el-card>
@@ -21,29 +29,41 @@ export default {
   name: 'Login',
   data() {
     return {
+      connected: false,
       selectedOption: '',
       isUserLogged: this.$store.state.userInfo.isLoggedIn,
+      form: {
+        userRole: '',
+      },
+      rules: {
+        userRole: [
+          {
+            required: true,
+            message: 'Please select a user role',
+            trigger: 'blur',
+          },
+        ],
+      },
     }
   },
+  computed: {
+    elementIndex() {
+      return this.$store.state.accountList.indexOf(
+        this.$store.state.accountAddress.toLowerCase()
+      )
+    },
+  },
+  mounted() {},
   methods: {
-    onMetamaskLogin() {
-      if (!window.ethereum) {
-        alert('Metamask is not installed in your browser')
-        return
-      }
-
-      window.ethereum
-        .request({ method: 'eth_requestAccounts' })
-        .then((accounts) => {
-          const ethereumAddress = accounts[0]
-          this.$store.commit('isUserLoggedIn', true)
-          this.$store.commit('setAccountAddress', ethereumAddress)
-          this.$router.push('/select-role')
-        })
-        .catch((error) => {
-          alert('Metamask login failed')
-          console.error(error)
-        })
+    onSelectRole() {
+      this.$store.commit('setUserRole', this.form.userRole.toLowerCase())
+      this.$router.push(`/${this.form.userRole.toLowerCase()}`)
+    },
+    getRoles(accountAddress) {
+      return this.$store.state.accountMappingRole[this.elementIndex]?.roles
+    },
+    capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1)
     },
   },
 }

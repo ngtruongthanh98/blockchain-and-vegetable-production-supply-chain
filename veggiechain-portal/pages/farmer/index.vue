@@ -12,9 +12,12 @@
         <el-form-item label="Next Destination (Factory)">
           <el-radio-group v-model="formData.nextDestination">
             <el-radio
-              v-for="(factory, index) in FACTORY_LIST"
+              v-for="(factory, index) in transformArray(
+                factories,
+                this.$store.state.originAddressList
+              )"
               :key="index"
-              :label="factory.address"
+              :label="factory"
             />
           </el-radio-group>
         </el-form-item>
@@ -75,6 +78,7 @@
 
 <script>
 import { loadContract } from '@/utils/loadContract'
+import { findFactories, transformArray } from '@/utils'
 
 export default {
   data() {
@@ -94,16 +98,7 @@ export default {
         vegetableImage: '',
       },
       farmerAddress: '0x70f8Dc728c9ed0DC1aF05Cc591b2A2c61709595f',
-      FACTORY_LIST: [
-        {
-          name: 'FACTORY ABC',
-          address: '0x2BA0dcFE57386774B08C0AE9755D95EcA89774ea',
-        },
-        {
-          name: 'VISSAN',
-          address: '0x3B21e064E730854205C289B891E2755dF2917600',
-        },
-      ],
+      factories: [],
     }
   },
   mounted() {
@@ -112,8 +107,14 @@ export default {
     if (!this.$store.state.contractMethods) {
       this.$store.commit('addContractMethods', this.loadContract.methods)
     }
+
+    this.factories = findFactories(
+      this.$store.state.accountMappingRole,
+      this.$store.state.accountAddress
+    )
   },
   methods: {
+    transformArray,
     async submitForm() {
       console.log('this.formData: ', this.formData)
 
