@@ -24,12 +24,12 @@
 
     <div class="item">
       <div class="item-title">Planting and harvest dates:</div>
-      <div class="item-content">Planting: {{ stageDetail.plantingDate }} Harvest: {{ stageDetail.harvestDate }}</div>
+      <div class="item-content">Planting: {{ stageDetail.plantingDate }} <br> Harvest: {{ stageDetail.harvestDate }}</div>
     </div>
 
     <div class="item">
       <div class="item-title">Pesticide and herbicide use:</div>
-      <div class="item-content">Pesticide: {{ stageDetail.pesticideUse }} Herbicide: {{ stageDetail.herbicideUse }}</div>
+      <div class="item-content">Pesticide: {{ stageDetail.pesticideUse }} <br> Herbicide: {{ stageDetail.herbicideUse }}</div>
     </div>
 
     <div class="item">

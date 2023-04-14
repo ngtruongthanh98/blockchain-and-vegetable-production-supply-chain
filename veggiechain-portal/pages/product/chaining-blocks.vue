@@ -11,7 +11,6 @@
     >
       <div class="block-title">Farm</div>
       <div class="block-content">
-        <p>Farm name</p>
         <button @click="changeBlock(1)">View</button>
       </div>
     </div>
@@ -27,7 +26,6 @@
     >
       <div class="block-title">Factory</div>
       <div class="block-content">
-        <p>Factory name</p>
         <button @click="changeBlock(2)">View</button>
       </div>
     </div>
@@ -43,7 +41,6 @@
     >
       <div class="block-title">Distributor</div>
       <div class="block-content">
-        <p>Distributor name</p>
         <button @click="changeBlock(3)">View</button>
       </div>
     </div>
@@ -59,7 +56,6 @@
     >
       <div class="block-title">Retailer</div>
       <div class="block-content">
-        <p>Retailer name</p>
         <button @click="changeBlock(4)">View</button>
       </div>
     </div>

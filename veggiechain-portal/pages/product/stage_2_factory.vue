@@ -14,7 +14,7 @@
 
     <div class="item">
       <div class="item-title">Contact information:</div>
-      <div class="item-content">Name: {{ stageDetail.contactName }} Email: {{ stageDetail.contactEmail }} Phone {{ stageDetail.contactPhone }}</div>
+      <div class="item-content">Name: {{ stageDetail.contactName }} <br> Email: {{ stageDetail.contactEmail }} <br> Phone {{ stageDetail.contactPhone }}</div>
     </div>
 
     <div class="item">
