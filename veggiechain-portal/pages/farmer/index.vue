@@ -10,7 +10,13 @@
         style="max-width: 600px"
       >
         <el-form-item label="Next Destination (Factory)">
-          <el-input v-model="formData.nextDestination"></el-input>
+          <el-radio-group v-model="formData.nextDestination">
+            <el-radio
+              v-for="(factory, index) in FACTORY_LIST"
+              :key="index"
+              :label="factory.address"
+            />
+          </el-radio-group>
         </el-form-item>
         <el-form-item label="Farm Name">
           <el-input v-model="formData.farmName"></el-input>
@@ -68,9 +74,12 @@
 </template>
 
 <script>
+import { loadContract } from '@/utils/loadContract'
+
 export default {
   data() {
     return {
+      loadContract: {},
       formData: {
         nextDestination: '',
         farmName: '',
@@ -84,11 +93,55 @@ export default {
         certificationStatus: '',
         vegetableImage: '',
       },
+      farmerAddress: '0x70f8Dc728c9ed0DC1aF05Cc591b2A2c61709595f',
+      FACTORY_LIST: [
+        {
+          name: 'FACTORY ABC',
+          address: '0x2BA0dcFE57386774B08C0AE9755D95EcA89774ea',
+        },
+        {
+          name: 'VISSAN',
+          address: '0x3B21e064E730854205C289B891E2755dF2917600',
+        },
+      ],
+    }
+  },
+  mounted() {
+    this.loadContract = loadContract()
+
+    if (!this.$store.state.contractMethods) {
+      this.$store.commit('addContractMethods', this.loadContract.methods)
     }
   },
   methods: {
-    submitForm() {
-      console.log(this.formData)
+    async submitForm() {
+      console.log('this.formData: ', this.formData)
+
+      try {
+        await this.loadContract.methods
+          .createNewVieggiesBlock(
+            this.formData.nextDestination,
+            JSON.stringify(this.formData),
+            'Farmer'
+          )
+          .send({ from: this.$store.state.accountAddress, gas: 3000000 })
+      } catch (error) {
+        console.log(error)
+      }
+
+      try {
+        const transactionData = await this.loadContract.methods
+          .getVeggieBlocksWithStage('Farmer')
+          .call()
+
+        console.log('transactionData: ', transactionData)
+      } catch (error) {
+        console.log(error)
+      }
+
+      this.resetForm()
+
+      console.log('Send data successfully')
     },
     resetForm() {
       this.nextDestination = ''
@@ -100,8 +153,8 @@ export default {
       this.formData.harvestDate = ''
       this.formData.pesticideUse = ''
       this.formData.herbicideUse = ''
-      ;(this.formData.certificationStatus = ''),
-        (this.formData.vegetableImage = '')
+      this.formData.certificationStatus = ''
+      this.formData.vegetableImage = ''
     },
   },
 }

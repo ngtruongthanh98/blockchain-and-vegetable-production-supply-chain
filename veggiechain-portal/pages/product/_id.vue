@@ -62,7 +62,7 @@ export default {
       productImageUrl:
         'https://media.phunutoday.vn/files/mai.doan/2019/01/31/ca-rot-1035.jpg',
       step: 1,
-      isHasCustomer: true,
+      isHasCustomer: false,
     }
   },
 
