@@ -10,6 +10,8 @@ contract VeggieContract {
   string constant retailerStage = "Retailer";
   string constant customerStage = "Customer";
 
+  mapping(string => string) private previousStage;
+
 
   mapping(uint => Veggie) public veggies;
 
@@ -25,6 +27,11 @@ contract VeggieContract {
 
   constructor() public {
     id = 0;
+
+    previousStage[factoryStage] = farmerStage;
+    previousStage[distributorStage] = factoryStage;
+    previousStage[retailerStage] = distributorStage;
+    previousStage[customerStage] = retailerStage;
     // createNewVieggiesBlock('carrot', 'nice', 'farm');
     // createNewVieggiesBlock('carrot', 'nicee', 'farm');
   }
@@ -45,15 +52,27 @@ contract VeggieContract {
     return string(result);
   }
 
+  function generateRandomStringWithSize(uint256 length) public view returns (string memory) {
+    bytes memory characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    bytes memory result = new bytes(length);
+
+    for (uint256 i = 0; i < length; i++) {
+        uint256 charIndex = uint256(keccak256(abi.encodePacked(block.timestamp, i))) % characters.length;
+        result[i] = characters[charIndex];
+    }
+
+    return string(result);
+  }
+
   function createNewVieggiesBlock (address _to, string memory _comment, string memory _stage) public {
     id++;
     if (isEqualStrings(_stage, farmerStage)) {
-      veggies[id] = Veggie(id, block.timestamp, getRandomConsignment(), msg.sender, _to, _stage, _comment);
+      veggies[id] = Veggie(id, block.timestamp, generateRandomStringWithSize(20), msg.sender, _to, _stage, _comment);
       return;
     }
     
     for (uint256 i = 1; i < id + 1; i++) {
-      if (msg.sender == veggies[i].to) {
+      if (msg.sender == veggies[i].to && isEqualStrings(veggies[i].stage, previousStage[_stage])) {
         // get consigments that delivered to the owner
         veggies[id] = Veggie(id, block.timestamp, veggies[i].consignment, msg.sender, _to, _stage, _comment);
       }
@@ -97,6 +116,17 @@ contract VeggieContract {
     }
 
     return res;
+  }
+
+  function getVeggieByConsignmentAndStage(string memory _consignment, string memory _stage) public view returns (Veggie memory) {
+    for (uint16 i = 1; i < id + 1; i++) {
+      if (isEqualStrings(veggies[i].consignment, _consignment) && isEqualStrings(veggies[i].stage, _stage)) {
+        // same consignment, add to result transaction
+        return veggies[i];
+      }
+    }
+
+    return Veggie(0, block.timestamp, "not found", msg.sender, msg.sender, _stage, "");
   }
 
   function getCommentFromFarmerByConsignment(string memory _consignment) public view returns (string memory) {
