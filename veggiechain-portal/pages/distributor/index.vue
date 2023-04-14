@@ -100,7 +100,7 @@ export default {
           .createNewVieggiesBlock(
             this.formData.nextDestination,
             JSON.stringify(this.formData),
-            'Factory'
+            'Distributor'
           )
           .send({ from: this.$store.state.accountAddress, gas: 3000000 })
       } catch (error) {
@@ -109,7 +109,7 @@ export default {
 
       try {
         const transactionData = await this.loadContract.methods
-          .getVeggieBlocksWithStage('Factory')
+          .getVeggieBlocksWithStage('Distributor')
           .call()
 
         console.log('transactionData: ', transactionData)
