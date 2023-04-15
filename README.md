@@ -22,6 +22,8 @@ Build and deploy contracts:
   
   
   Frontend:
+  Required: node v16+: https://nodejs.org/en/blog/release/v16.16.0 or https://nodejs.org/en/download
+  
   - cd veggiechain-portal
   - yarn
   - yarn dev
